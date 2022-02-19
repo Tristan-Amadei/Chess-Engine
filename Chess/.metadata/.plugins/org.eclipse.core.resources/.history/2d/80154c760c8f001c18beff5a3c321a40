@@ -1,0 +1,5 @@
+package game.adversary;
+
+public class Evaluation {
+
+}

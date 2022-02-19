@@ -1,0 +1,8 @@
+1644869169311	Delete element
+1644870015761	Delete element
+1645010375836	Rename package 'game.adversary'
+1645010627149	Rename method 'boardEvaluation'
+1645031537565	Rename method 'playBestMove'
+1645177575649	Rename method 'numberOfMoves'
+1645177717408	Rename method 'numberOfMovesInitial'
+1645225300370	Rename type 'GameState'

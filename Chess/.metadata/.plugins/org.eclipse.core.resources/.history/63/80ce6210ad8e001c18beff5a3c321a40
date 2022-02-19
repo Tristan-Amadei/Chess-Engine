@@ -1,0 +1,59 @@
+package game.tests;
+
+import java.util.HashSet;
+
+import game.Board;
+
+public class GamePlay {
+
+	public static int numberOfMoves(Board board, int depth) {
+		int nbOfMoves = 0;
+		if (depth == 0) {
+			return 0;
+		}
+		
+		for (int line = 0; line<8; line++) {
+			for (int col=0; col < 8; col++) {
+				System.out.println("i: " + line + ", j: " + col);
+				if (board.board[line][col] != null && board.board[line][col].getColor() == board.colorToPlay) {
+					HashSet<Short> moves = board.board[line][col].possibleMoves(board, line, col);
+					if (moves.size() > 0) {
+						for (short move : moves) {
+							try {
+								board.board[line][col].movePiece(board, line, col, move/10, move-10*(move/10));
+								board.display();
+								nbOfMoves += 1 + numberOfMoves(board, depth-1);
+								board.unmakeMove();
+							} catch (Exception e) {
+								//System.out.println("depth: " + depth + " | " + board.board[line][col].getType() + " : [" + line + ", " + col + "] -> [" + move/10 + ", " + (move-10*(move/10)) + "]");
+							}
+						}
+					}
+				}
+			}
+		}
+	/*
+		for (short piece_square : board.inGamePieces) {
+			System.out.println(piece_square);
+			int line = piece_square/10;
+			int col = piece_square - 10*line;
+			if (board.board[line][col].getColor() == board.colorToPlay) {
+				HashSet<Short> moves = board.board[line][col].possibleMoves(board, line, col);
+				if (moves.size() > 0) {
+					for (short move : moves) {
+						try {
+							board.board[line][col].movePiece(board, line, col, move/10, move-10*(move/10));
+							board.display();
+							nbOfMoves = 1 + numberOfMoves(board, depth-1);
+							board.unmakeMove();
+						} catch (Exception e) {
+							//System.out.println("depth: " + depth + " | " + board.board[line][col].getType() + " : [" + line + ", " + col + "] -> [" + move/10 + ", " + (move-10*(move/10)) + "]");
+						}
+					}
+				}
+			}
+		}
+		*/
+		return nbOfMoves;
+	}
+}

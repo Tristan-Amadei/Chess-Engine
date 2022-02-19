@@ -1,0 +1,45 @@
+package gui;
+
+import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
+public class Controller_Rook {
+	
+	@FXML
+	private ImageView WRook1;
+	private double xwRook1;
+	private double ywRook1;
+	@FXML
+	private ImageView WRook2;
+	private double xwRook2;
+	private double ywRook2;
+	@FXML
+	private ImageView BRook1;
+	private double xbRook1;
+	private double ybRook1;
+	@FXML
+	private ImageView BRook2;
+	private double xbRook2;
+	private double ybRook2;
+
+	public void follow_WRook1(MouseEvent e) {
+		WRook1.setX(xwRook1 = e.getX()-(87.5/2));
+		WRook1.setY(ywRook1 = e.getY()-(87.5/2));
+	}
+	
+	public void follow_WRook2(MouseEvent e) {
+		WRook2.setX(xwRook2 = e.getX()-(87.5/2));
+		WRook2.setY(ywRook2 = e.getY()-(87.5/2));
+	}
+	
+	public void follow_BRook1(MouseEvent e) {
+		BRook1.setX(xbRook1 = e.getX()-(87.5/2));
+		BRook1.setY(ybRook1 = e.getY()-(87.5/2));
+	}
+	
+	public void follow_BRook2(MouseEvent e) {
+		BRook2.setX(xbRook2 = e.getX()-(87.5/2));
+		BRook2.setY(ybRook2 = e.getY()-(87.5/2));
+	}
+}

@@ -1,0 +1,14 @@
+package game.pieces;
+
+public class PieceTypeClass {
+	
+	public enum PieceType {
+		None, 
+		King, 
+		Queen, 
+		Rook, 
+		Knight, 
+		Bishop, 
+		Pawn
+	}
+}

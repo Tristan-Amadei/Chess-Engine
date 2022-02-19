@@ -1,0 +1,70 @@
+package game;
+
+import game.pieces.PieceTypeClass.PieceType;
+import game.MoveTypeClass.MoveType;
+
+public class Move {
+
+	private PieceType movedPiece;
+	private PieceType capturedPiece;
+	private boolean colorOfPiece;
+	private short startSquare;
+	private short landingSquare;
+	private MoveType moveType;
+
+	public Move(final PieceType movedPiece, final boolean colorOfPiece, final short startSquare,
+			final short landingSquare, final PieceType capturedPiece, final MoveType moveType) {
+		this.movedPiece = movedPiece;
+		this.colorOfPiece = colorOfPiece;
+		this.startSquare = startSquare;
+		this.landingSquare = landingSquare;
+		this.capturedPiece = capturedPiece;
+		this.moveType = moveType;
+	}
+
+	public PieceType getMovedPiece() {
+		return movedPiece;
+	}
+
+	public boolean getColorOfPiece() {
+		return colorOfPiece;
+	}
+
+	public short getStartSquare() {
+		return startSquare;
+	}
+
+	public short getLandingSquare() {
+		return landingSquare;
+	}
+
+	public PieceType getCapturedPiece() {
+		return capturedPiece;
+	}
+
+	public MoveType getMoveType() {
+		return moveType;
+	}
+
+	public void display() {
+		System.out.println(movedPiece + ": [" + startSquare / 10 + ", " + (startSquare - 10 * (startSquare / 10))
+				+ "] -> [" + landingSquare / 10 + ", " + (landingSquare - 10 * (landingSquare / 10)) + "]");
+	}
+
+	public void playMove(Board board) {
+		int start_line = startSquare / 10;
+		int start_col = startSquare - 10 * start_line;
+		int land_line = landingSquare / 10;
+		int land_col = landingSquare - 10 * land_line;
+		// if (movedPiece != board.board[start_line][start_col].getType() ||
+		// colorOfPiece != board.board[start_line][start_col].getColor()) {
+		// return;
+		// }
+		try {
+			board.board[start_line][start_col].legalMovePiece(board, start_line, start_col, land_line, land_col);
+		} catch (Exception e) {
+			System.out.println("Move impossible: " + this.movedPiece + " [" + start_line + ", " + start_col + "] -> ["
+					+ land_line + ", " + land_col + "]\n");
+		}
+	}
+}

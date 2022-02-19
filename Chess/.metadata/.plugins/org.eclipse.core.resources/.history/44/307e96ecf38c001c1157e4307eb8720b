@@ -1,0 +1,41 @@
+package gui;
+
+import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
+import java.util.HashSet;
+
+import game.pieces.*;
+
+public class Controller_Moves {
+
+	@FXML
+	private ImageView WRook1;
+	private double xwRook1;
+	private double ywRook1;
+	@FXML
+	private ImageView WKnight1;
+	private double xwKnight1;
+	private double ywKnight1;
+	@FXML
+	private ImageView WBishop1;
+	private double xwBishop1;
+	private double ywBishop1;
+	@FXML
+	private ImageView WQueen;
+	private double xwQueen;
+	private double ywQueen;
+	
+	public void possibleMoves_WRook1(MouseEvent e) {
+		double x_Mouse = e.getX();
+		double y_Mouse = e.getY();
+		int j = (int)Math.floor(8*x_Mouse/700);
+		int i = (int)Math.floor(8*y_Mouse/700);
+		
+		HashSet<Short> moves = RunningGUI.gameBoard.board[i][j].possibleMoves(RunningGUI.gameBoard, i, j);
+		for (int k=0; k<moves.size(); k++) {
+			System.out.println(k);
+		}
+	}
+}

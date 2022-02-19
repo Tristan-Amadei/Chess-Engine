@@ -1,0 +1,706 @@
+package game.opponent;
+
+import game.*;
+import game.pieces.*;
+import game.pieces.PieceTypeClass.PieceType;
+
+public class Evaluation {
+	
+	public static double pieceEvaluation(Piece piece) {
+		int color_coefficient;
+		if (piece.getColor()) {
+			color_coefficient = 1;
+		} else {
+			color_coefficient = -1;
+		}
+		switch(piece.getType()) {
+		case Pawn:
+			return color_coefficient * 100;
+		case Knight:
+			return color_coefficient * 320;
+		case Bishop:
+			return color_coefficient * 330;
+		case Rook:
+			return color_coefficient * 500;
+		case Queen:
+			return color_coefficient * 900;
+		case King:
+			return color_coefficient * Double.POSITIVE_INFINITY;
+		}
+		return 0;
+	}
+	
+	public static double rawBoardEvaluation(Board board) {
+		int boardEval = 0;
+		for (short piece_square : board.inGamePieces) {
+			
+			System.out.println(board.board[piece_square/10][piece_square - 10*(piece_square/10)].getType() + " " + 
+					board.board[piece_square/10][piece_square - 10*(piece_square/10)].getColor());
+			System.out.println(pieceEvaluation(board.board[piece_square/10][piece_square - 10*(piece_square/10)]));
+			
+			if (board.board[piece_square/10][piece_square - 10*(piece_square/10)].getType() != PieceType.King) {
+				boardEval += pieceEvaluation(board.board[piece_square/10][piece_square - 10*(piece_square/10)]);
+				System.out.println(boardEval + "\n");
+			}
+		}
+		return boardEval;
+	}
+	
+	public static int bonusSquareKnight(int i, int j, Board board) {
+		/* le but de cette fonction est de mettre en place cette matrice de valeur a ajouter a l'evaluation d'une position donnee 
+		 -50,-40,-30,-30,-30,-30,-40,-50,
+		 -40,-20,  0,  0,  0,  0,-20,-40,
+		 -30,  0, 10, 15, 15, 10,  0,-30,
+		 -30,  5, 15, 20, 20, 15,  5,-30,
+		 -30,  0, 15, 20, 20, 15,  0,-30,
+		 -30,  5, 10, 15, 15, 10,  5,-30,
+		 -40,-20,  0,  5,  5,  0,-20,-40,
+		 -50,-40,-30,-30,-30,-30,-40,-50,*/
+		int bonus = 0; // par defaut si la piece ne correspond pas a ce qu'on veut, on n'ajoute aucune evaluation
+		if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.Knight) {
+			
+			switch(i) {
+			case 0: switch(j) {
+					case 0: bonus = -50;break;
+					case 1: bonus = -40;break;
+					case 2: bonus = -30;break;
+					case 3: bonus = -30;break;
+					case 4: bonus = -30;break;
+					case 5: bonus = -30;break;
+					case 6: bonus = -40;break;
+					case 7: bonus = -50;break;
+				}; break;
+			case 1: switch(j) {
+					case 0: bonus = -40;break;
+					case 1: bonus = -20;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = -20;break;
+					case 7: bonus = -40;break;
+					}; break;
+			case 2: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 10;break;
+					case 3: bonus = 15;break;
+					case 4: bonus = 15;break;
+					case 5: bonus = 10;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 3: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = 5;break;
+					case 2: bonus = 15;break;
+					case 3: bonus = 20;break;
+					case 4: bonus = 20;break;
+					case 5: bonus = 15;break;
+					case 6: bonus = 5;break;
+					case 7: bonus = -30;break;
+					}; break;
+			default:
+				bonus = bonusSquareKnight(7-i, j, board); // on utilise le fait que les parties hautes et basses de la matrice sont les memes
+			}
+			
+		}
+		return bonus;
+			
+	}
+	
+	public static int bonusSquareBishop(int i, int j, Board board) {
+		/* le but de cette fonction est de mettre en place cette matrice de valeur a ajouter a l'evaluation d'une position donnee 
+		 -20,-10,-10,-10,-10,-10,-10,-20,
+		-10,  0,  0,  0,  0,  0,  0,-10,
+		-10,  0,  5, 10, 10,  5,  0,-10,
+		-10,  5,  5, 10, 10,  5,  5,-10,
+		-10,  0, 10, 10, 10, 10,  0,-10,
+		-10, 10, 10, 10, 10, 10, 10,-10,
+		-10,  5,  0,  0,  0,  0,  5,-10,
+		-20,-10,-10,-10,-10,-10,-10,-20,  */
+		int bonus = 0; // par defaut si la piece ne correspond pas a ce qu'on veut, on n'ajoute aucune evaluation
+		if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.Bishop) {
+			
+			switch(i) {
+			case 0: switch(j) {
+					case 0: bonus = -20;break;
+					case 1: bonus = -10;break;
+					case 2: bonus = -10;break;
+					case 3: bonus = -10;break;
+					case 4: bonus = -10;break;
+					case 5: bonus = -10;break;
+					case 6: bonus = -10;break;
+					case 7: bonus = -20;break;
+				}; break;
+			case 1: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 2: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 5;break;
+					case 3: bonus = 10;break;
+					case 4: bonus = 10;break;
+					case 5: bonus = 5;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 3: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 5;break;
+					case 2: bonus = 5;break;
+					case 3: bonus = 10;break;
+					case 4: bonus = 10;break;
+					case 5: bonus = 5;break;
+					case 6: bonus = 5;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 4: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 10;break;
+					case 3: bonus = 10;break;
+					case 4: bonus = 10;break;
+					case 5: bonus = 10;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 5: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 10;break;
+					case 2: bonus = 10;break;
+					case 3: bonus = 10;break;
+					case 4: bonus = 10;break;
+					case 5: bonus = 10;break;
+					case 6: bonus = 10;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 6: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 5;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 5;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 7: switch(j) {
+					case 0: bonus = -20;break;
+					case 1: bonus = -10;break;
+					case 2: bonus = -10;break;
+					case 3: bonus = -10;break;
+					case 4: bonus = -10;break;
+					case 5: bonus = -10;break;
+					case 6: bonus = -10;break;
+					case 7: bonus = -20;break;
+					}; break;
+			}
+			
+		}
+		return bonus;
+			
+	}
+	
+	public static int bonusSquareRook(int i, int j, Board board) {
+		/* le but de cette fonction est de mettre en place cette matrice de valeur a ajouter a l'evaluation d'une position donnee 
+		 0,  0,  0,  0,  0,  0,  0,  0,
+		  5, 10, 10, 10, 10, 10, 10,  5,
+		 -5,  0,  0,  0,  0,  0,  0, -5,
+		 -5,  0,  0,  0,  0,  0,  0, -5,
+		 -5,  0,  0,  0,  0,  0,  0, -5,
+		 -5,  0,  0,  0,  0,  0,  0, -5,
+		 -5,  0,  0,  0,  0,  0,  0, -5,
+		  0,  0,  0,  5,  5,  0,  0,  0  */
+		int bonus = 0; // par defaut si la piece ne correspond pas a ce qu'on veut, on n'ajoute aucune evaluation
+		if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.Rook) {
+			
+			switch(i) {
+			case 0: bonus = 0;break;
+			case 1: switch(j) {
+					case 0: bonus = 5;break;
+					case 1: bonus = 10;break;
+					case 2: bonus = 10;break;
+					case 3: bonus = 10;break;
+					case 4: bonus = 10;break;
+					case 5: bonus = 10;break;
+					case 6: bonus = 10;break;
+					case 7: bonus = 5;break;
+					}; break;
+			case 2: switch(j) {
+					case 0: bonus = -5;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -5;break;
+					}; break;
+			case 3: switch(j) {
+					case 0: bonus = -5;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -5;break;
+					}; break;
+			case 4: switch(j) {
+					case 0: bonus = -5;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -5;break;
+					}; break;
+			case 5: switch(j) {
+					case 0: bonus = -5;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -5;break;
+					}; break;
+			case 6: switch(j) {
+					case 0: bonus = -5;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -5;break;
+					}; break;
+			case 7: switch(j) {
+					case 0: bonus = 0;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 5;break;
+					case 4: bonus = 5;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = 0;break;
+					}; break;
+			}
+			
+		}
+		return bonus;
+			
+	}
+	
+	public static int bonusSquareQueen(int i, int j, Board board) {
+		/* le but de cette fonction est de mettre en place cette matrice de valeur a ajouter a l'evaluation d'une position donnee 
+		 -20,-10,-10, -5, -5,-10,-10,-20,
+		-10,  0,  0,  0,  0,  0,  0,-10,
+		-10,  0,  5,  5,  5,  5,  0,-10,
+		 -5,  0,  5,  5,  5,  5,  0, -5,
+		  0,  0,  5,  5,  5,  5,  0, -5,
+		-10,  5,  5,  5,  5,  5,  0,-10,
+		-10,  0,  5,  0,  0,  0,  0,-10,
+		-20,-10,-10, -5, -5,-10,-10,-20  */
+		int bonus = 0; // par defaut si la piece ne correspond pas a ce qu'on veut, on n'ajoute aucune evaluation
+		if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.Queen) {
+			
+			switch(i) {
+			case 0: switch(j) {
+					case 0: bonus = -20;break;
+					case 1: bonus = -10;break;
+					case 2: bonus = -10;break;
+					case 3: bonus = -5;break;
+					case 4: bonus = -5;break;
+					case 5: bonus = -10;break;
+					case 6: bonus = -10;break;
+					case 7: bonus = -20;break;
+					}; break;
+			case 1: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 2: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 5;break;
+					case 3: bonus = 5;break;
+					case 4: bonus = 5;break;
+					case 5: bonus = 5;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 3: switch(j) {
+					case 0: bonus = -5;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 5;break;
+					case 3: bonus = 5;break;
+					case 4: bonus = 5;break;
+					case 5: bonus = 5;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -5;break;
+					}; break;
+			case 4: switch(j) {
+					case 0: bonus = 0;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 5;break;
+					case 3: bonus = 5;break;
+					case 4: bonus = 5;break;
+					case 5: bonus = 5;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -5;break;
+					}; break;
+			case 5: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 5;break;
+					case 2: bonus = 5;break;
+					case 3: bonus = 5;break;
+					case 4: bonus = 5;break;
+					case 5: bonus = 5;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 6: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 5;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 7: bonus = bonusSquareQueen(0, j, board);
+			}
+			
+		}
+		return bonus;
+			
+	}
+	
+	public static int bonusSquarePawn(int i, int j, Board board) {
+		/* le but de cette fonction est de mettre en place cette matrice de valeur a ajouter a l'evaluation d'une position donnee 
+		  0,  0,  0,  0,  0,  0,  0,  0,
+		50, 50, 50, 50, 50, 50, 50, 50,
+		10, 10, 20, 30, 30, 20, 10, 10,
+		 5,  5, 10, 25, 25, 10,  5,  5,
+		 0,  0,  0, 20, 20,  0,  0,  0,
+		 5, -5,-10,  0,  0,-10, -5,  5,
+		 5, 10, 10,-20,-20, 10, 10,  5,
+		 0,  0,  0,  0,  0,  0,  0,  0  */
+		int bonus = 0; // par defaut si la piece ne correspond pas a ce qu'on veut, on n'ajoute aucune evaluation
+		if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.Pawn) {
+			
+			switch(i) {
+			case 0: bonus = 0;break;
+			case 1: bonus = 50; break;
+			case 2: switch(j) {
+					case 0: bonus = 10;break;
+					case 1: bonus = 10;break;
+					case 2: bonus = 20;break;
+					case 3: bonus = 30;break;
+					case 4: bonus = 30;break;
+					case 5: bonus = 20;break;
+					case 6: bonus = 10;break;
+					case 7: bonus = 10;break;
+					}; break;
+			case 3: switch(j) {
+					case 0: bonus = 5;break;
+					case 1: bonus = 5;break;
+					case 2: bonus = 10;break;
+					case 3: bonus = 25;break;
+					case 4: bonus = 25;break;
+					case 5: bonus = 10;break;
+					case 6: bonus = 5;break;
+					case 7: bonus = 5;break;
+					}; break;
+			case 4: switch(j) {
+					case 0: bonus = 0;break;
+					case 1: bonus = 0;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 20;break;
+					case 4: bonus = 20;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 0;break;
+					case 7: bonus = 0;break;
+					}; break;
+			case 5: switch(j) {
+					case 0: bonus = 5;break;
+					case 1: bonus = -5;break;
+					case 2: bonus = -10;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = -10;break;
+					case 6: bonus = -5;break;
+					case 7: bonus = 5;break;
+					}; break;
+			case 6: switch(j) {
+					case 0: bonus = 5;break;
+					case 1: bonus = 10;break;
+					case 2: bonus = 10;break;
+					case 3: bonus = -20;break;
+					case 4: bonus = -20;break;
+					case 5: bonus = 10;break;
+					case 6: bonus = 10;break;
+					case 7: bonus = 5;break;
+					}; break;
+			case 7: bonus = 0; break;
+			}
+			
+		}
+		return bonus;
+			
+	}
+	
+	public static int bonusSquareKingMiddleGame(int i, int j, Board board) {
+		/* le but de cette fonction est de mettre en place cette matrice de valeur a ajouter a l'evaluation d'une position donnee 
+		 	-30,-40,-40,-50,-50,-40,-40,-30,
+			-30,-40,-40,-50,-50,-40,-40,-30,
+			-30,-40,-40,-50,-50,-40,-40,-30,
+			-30,-40,-40,-50,-50,-40,-40,-30,
+			-20,-30,-30,-40,-40,-30,-30,-20,
+			-10,-20,-20,-20,-20,-20,-20,-10,
+			 10, 15,  0,  0,  0,  0, 15, 10,
+			 20, 50, 10,  0,  0, 10, 50, 20  */
+		int bonus = 0; // par defaut si la piece ne correspond pas a ce qu'on veut, on n'ajoute aucune evaluation
+		if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.King) {
+			
+			switch(i) {
+			case 0: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -40;break;
+					case 2: bonus = -40;break;
+					case 3: bonus = -50;break;
+					case 4: bonus = -50;break;
+					case 5: bonus = -40;break;
+					case 6: bonus = -40;break;
+					case 7: bonus = -30;break;
+				}; break;
+			case 1: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -40;break;
+					case 2: bonus = -40;break;
+					case 3: bonus = -50;break;
+					case 4: bonus = -50;break;
+					case 5: bonus = -40;break;
+					case 6: bonus = -40;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 2: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -40;break;
+					case 2: bonus = -40;break;
+					case 3: bonus = -50;break;
+					case 4: bonus = -50;break;
+					case 5: bonus = -40;break;
+					case 6: bonus = -40;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 3: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -40;break;
+					case 2: bonus = -40;break;
+					case 3: bonus = -50;break;
+					case 4: bonus = -50;break;
+					case 5: bonus = -40;break;
+					case 6: bonus = -40;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 4: switch(j) {
+					case 0: bonus = -20;break;
+					case 1: bonus = -30;break;
+					case 2: bonus = -30;break;
+					case 3: bonus = -40;break;
+					case 4: bonus = -40;break;
+					case 5: bonus = -30;break;
+					case 6: bonus = -30;break;
+					case 7: bonus = -20;break;
+					}; break;
+			case 5: switch(j) {
+					case 0: bonus = -10;break;
+					case 1: bonus = -20;break;
+					case 2: bonus = -20;break;
+					case 3: bonus = -20;break;
+					case 4: bonus = -20;break;
+					case 5: bonus = -20;break;
+					case 6: bonus = -20;break;
+					case 7: bonus = -10;break;
+					}; break;
+			case 6: switch(j) {
+					case 0: bonus = 10;break;
+					case 1: bonus = 15;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = 15;break;
+					case 7: bonus = 10;break;
+					}; break;
+			case 7: switch(j) {
+					case 0: bonus = 20;break;
+					case 1: bonus = 50;break;
+					case 2: bonus = 10;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 10;break;
+					case 6: bonus = 50;break;
+					case 7: bonus = 20;break;
+					}; break;
+			}
+			
+		}
+		return bonus;
+			
+	}
+	
+	public static int bonusSquareKingEndGame(int i, int j, Board board) {
+		/* le but de cette fonction est de mettre en place cette matrice de valeur a ajouter a l'evaluation d'une position donnee 
+		 	-50,-40,-30,-20,-20,-30,-40,-50,
+			-30,-20,-10,  0,  0,-10,-20,-30,
+			-30,-10, 20, 30, 30, 20,-10,-30,
+			-30,-10, 30, 40, 40, 30,-10,-30,
+			-30,-10, 30, 40, 40, 30,-10,-30,
+			-30,-10, 20, 30, 30, 20,-10,-30,
+			-30,-30,  0,  0,  0,  0,-30,-30,
+			-50,-30,-30,-30,-30,-30,-30,-50 */
+		int bonus = 0; // par defaut si la piece ne correspond pas a ce qu'on veut, on n'ajoute aucune evaluation
+		if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.King) {
+			
+			switch(i) {
+			case 0: switch(j) {
+					case 0: bonus = -50;break;
+					case 1: bonus = -40;break;
+					case 2: bonus = -30;break;
+					case 3: bonus = -20;break;
+					case 4: bonus = -20;break;
+					case 5: bonus = -30;break;
+					case 6: bonus = -40;break;
+					case 7: bonus = -50;break;
+				}; break;
+			case 1: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -20;break;
+					case 2: bonus = -10;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = -10;break;
+					case 6: bonus = -30;break;
+					case 7: bonus = -40;break;
+					}; break;
+			case 2: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = 10;break;
+					case 2: bonus = 20;break;
+					case 3: bonus = 30;break;
+					case 4: bonus = 30;break;
+					case 5: bonus = 20;break;
+					case 6: bonus = -10;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 3: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -10;break;
+					case 2: bonus = 30;break;
+					case 3: bonus = 40;break;
+					case 4: bonus = 40;break;
+					case 5: bonus = 30;break;
+					case 6: bonus = -10;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 4: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -10;break;
+					case 2: bonus = 30;break;
+					case 3: bonus = 40;break;
+					case 4: bonus = 40;break;
+					case 5: bonus = 30;break;
+					case 6: bonus = -10;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 5: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -10;break;
+					case 2: bonus = 20;break;
+					case 3: bonus = 30;break;
+					case 4: bonus = 30;break;
+					case 5: bonus = 20;break;
+					case 6: bonus = -10;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 6: switch(j) {
+					case 0: bonus = -30;break;
+					case 1: bonus = -30;break;
+					case 2: bonus = 0;break;
+					case 3: bonus = 0;break;
+					case 4: bonus = 0;break;
+					case 5: bonus = 0;break;
+					case 6: bonus = -30;break;
+					case 7: bonus = -30;break;
+					}; break;
+			case 7: switch(j) {
+					case 0: bonus = -50;break;
+					case 1: bonus = -30;break;
+					case 2: bonus = -30;break;
+					case 3: bonus = -30;break;
+					case 4: bonus = -30;break;
+					case 5: bonus = -30;break;
+					case 6: bonus = -30;break;
+					case 7: bonus = -50;break;
+					}; break;
+			}
+			
+		}
+		return bonus;
+			
+	}
+	
+	public static int bonusSquare(int i, int j, Board board) { // on ajoute a chaque piece de l'echiquier son bonus d'evaluation par rapport a la case sur laquelle elle se trouve
+		int score = 0;
+		if (board.board[i][j] != null && board.board[i][j].getColor()) {
+			score += bonusSquarePawn(i, j, board) + bonusSquareKnight(i, j, board) + bonusSquareBishop(i, j, board) 
+			+ bonusSquareRook(i, j, board) + bonusSquareQueen(i, j, board) + bonusSquareKingMiddleGame(i, j, board);
+			return score;
+			
+		} else if (board.board[i][j] != null && board.board[i][j].getColor() == false) { // on renverse la matrice et on multiplie par -1 les bonus obtenus
+			score += (-1)*(bonusSquarePawn(7-i, 7-j, board) + bonusSquareKnight(7-i, 7-j, board) + bonusSquareBishop(7-i, 7-j, board) 
+			+ bonusSquareRook(7-i, 7-j, board) + bonusSquareQueen(7-i, 7-j, board) + bonusSquareKingMiddleGame(7-i, 7-j, board) + bonusSquareKingMiddleGame(7-i, 7-j, board));
+			return score;
+		} else {
+			return 0;
+		}
+	}
+	
+	public static double heuristicEvaluation(Board board) { 
+		double heuristic_score = 0;
+		
+		int bonus_eval = 0;
+		for (int k=0; k<8; k++) {
+			for (int l=0; l<8; l++) {
+				bonus_eval += Evaluation.bonusSquare(k, l, board);
+			}
+		}
+		heuristic_score += bonus_eval;
+		
+		return heuristic_score;
+	}
+	
+	public static double overallEvaluation(Board board) {
+		return rawBoardEvaluation(board) + heuristicEvaluation(board);
+	}
+}

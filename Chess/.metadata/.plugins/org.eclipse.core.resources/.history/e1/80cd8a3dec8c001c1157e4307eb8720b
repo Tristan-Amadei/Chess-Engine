@@ -1,0 +1,29 @@
+package gui;
+
+import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+
+public class Controller_Moves {
+
+	@FXML
+	private ImageView WRook1;
+	private double xwRook1;
+	private double ywRook1;
+	@FXML
+	private ImageView WKnight1;
+	private double xwKnight1;
+	private double ywKnight1;
+	@FXML
+	private ImageView WBishop1;
+	private double xwBishop1;
+	private double ywBishop1;
+	@FXML
+	private ImageView WQueen;
+	private double xwQueen;
+	private double ywQueen;
+	
+	public void possibleMoves_WRook1(MouseEvent e) {
+		
+	}
+}

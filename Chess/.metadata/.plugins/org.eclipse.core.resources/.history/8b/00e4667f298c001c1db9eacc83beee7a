@@ -1,0 +1,13 @@
+package game;
+
+public class MoveTypeClass {
+	
+	public enum PieceType {
+		Normal, 
+		EnPassant,
+		KingSideCastle,
+		QueenSideCastle,
+		Promotion
+	}
+
+}

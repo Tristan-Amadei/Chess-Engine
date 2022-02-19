@@ -1,0 +1,12 @@
+package gui;
+
+import game.Board;
+
+public class Functions {
+	
+	public boolean coordinate_is_game_pieces(Board board, int i, int j) {
+		short coordinate = (short)(10*i+j);
+		return board.inGamePieces.contains(coordinate);
+	}
+
+}

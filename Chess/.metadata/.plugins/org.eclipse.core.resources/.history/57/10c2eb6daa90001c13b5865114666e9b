@@ -1,0 +1,51 @@
+package gui;
+
+import game.Board;
+import game.opponent.Engine;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+
+public class RunningGUI extends Application {
+	
+	public static Board gameBoard;
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+	@Override
+	public void start(Stage stage) throws Exception {
+		
+		gameBoard = new Board();
+		gameBoard.newGameBoard();
+		
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLGui.fxml"));
+		
+		Parent root = loader.load();
+		Scene scene = new Scene(root, 800, 700);
+		
+		stage.setResizable(false);
+		stage.setTitle("Chess Application");
+		Image icon = new Image("App Icon.png");
+		stage.getIcons().add(icon);
+		stage.setScene(scene);		
+		stage.show(); 
+		
+		/*Parent root = FXMLLoader.load(getClass().getResource("FXMLGui.fxml"));
+		Scene scene = new Scene(root, 800, 700);
+		
+		stage.setResizable(false);
+		stage.setTitle("Chess Application");
+		Image icon = new Image("App Icon.png");
+		stage.getIcons().add(icon);
+		stage.setScene(scene);		
+		stage.show();*/
+	}
+
+}

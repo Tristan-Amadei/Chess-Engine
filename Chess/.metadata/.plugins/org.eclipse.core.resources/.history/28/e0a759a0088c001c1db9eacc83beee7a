@@ -1,0 +1,11 @@
+package game.pieces;
+
+import game.pieces.PieceTypeClass.PieceType;
+
+public class NonePiece extends Piece{
+
+	public NonePiece() {
+		super(type, color);
+	}
+
+}

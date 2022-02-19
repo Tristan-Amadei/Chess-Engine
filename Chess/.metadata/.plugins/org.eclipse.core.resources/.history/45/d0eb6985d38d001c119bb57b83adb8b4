@@ -1,0 +1,13 @@
+package gui;
+
+import javafx.scene.image.ImageView;
+
+public class FunctionsGUI {
+
+	public ImageView getPieceOnCoordinate(int i, int j) {
+		if (WRook1.getLayoutX() == i && WRook1.getLayoutY() == j) {
+			return WRook1;
+		}
+		return null;
+	}
+}

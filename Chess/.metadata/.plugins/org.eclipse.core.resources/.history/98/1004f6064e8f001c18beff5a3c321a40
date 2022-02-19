@@ -1,0 +1,92 @@
+package game.opponent;
+
+import java.util.List;
+
+import game.*;
+
+public class Engine {	
+	
+	public Move bestMove;
+	public int nb_positions_reached;
+	
+	public Engine() {
+		this.bestMove = null;
+		this.nb_positions_reached = 0;
+	}
+	
+	public double alpha_beta_negamax(Board board, double alpha, double beta, int depth) {
+		if (depth <= 0) {
+			return Evaluation.overallEvaluation(board);
+		}
+		
+		List<Move> allMoves = board.allLegalMoves();
+		for (Move move : allMoves) {
+			move.playMove(board);
+			nb_positions_reached++;
+			double score = (-1)*alpha_beta_negamax(board, (-1)*beta, (-1)*alpha, depth-1);
+			board.unmakeMove();
+			if (score >= alpha) {
+				alpha = score;
+				bestMove = move;
+				if (alpha >= beta) {
+					break;
+				}
+			}
+		}
+		return alpha;
+	}
+	
+	public static void playBestMove_negamax(Board board, int depth) {
+		long t0 = System.currentTimeMillis();
+		
+		Engine engine = new Engine();
+		engine.alpha_beta_negamax(board, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, depth);
+		engine.bestMove.playMove(board);
+		
+		long t1 = System.currentTimeMillis();
+		System.out.println("Total time to find move at a depth of " + depth + ": " + (t1-t0)/1000 + " s. Went through " + engine.nb_positions_reached + " positions.");
+	}
+	
+	public double alphaBetaMax(Board board, double alpha, double beta, int depth) {
+		if (depth <= 0) {
+			return Evaluation.overallEvaluation(board);
+		}
+		
+		List<Move> allMoves = board.allLegalMoves();
+		for (Move move : allMoves) {
+			move.playMove(board);
+			double score = this.alphaBetaMin(board, alpha, beta, depth - 1);
+			board.unmakeMove();
+			if (score >= beta) {
+				return beta;
+			}
+			if (score > alpha) {
+				alpha = score;
+				bestMove = move;
+			}
+		}
+		return alpha;
+	}
+	
+	public double alphaBetaMin(Board board, double alpha, double beta, int depth) {
+		if (depth <= 0) {
+			return Evaluation.overallEvaluation(board);
+		}
+		
+		List<Move> allMoves = board.allLegalMoves();
+		for (Move move : allMoves) {
+			move.playMove(board);
+			double score = this.alphaBetaMax(board, alpha, beta, depth - 1);
+			board.unmakeMove();
+			if (score <= alpha) {
+				return alpha;
+			}
+			if (score < beta) {
+				beta = score;
+				bestMove = move;
+			}
+		}
+		return beta;
+	}
+	
+}

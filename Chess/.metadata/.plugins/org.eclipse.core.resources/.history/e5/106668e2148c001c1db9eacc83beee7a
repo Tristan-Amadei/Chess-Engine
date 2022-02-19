@@ -1,0 +1,66 @@
+package game.pieces;
+
+import java.util.HashSet;
+
+import game.*;
+import game.pieces.PieceTypeClass.PieceType;
+
+public class King extends Piece {
+	
+	public boolean hasMoved;
+
+	public King(final boolean color) {
+		super(PieceType.King, color);
+		this.hasMoved = false;
+	}
+	
+	public void display() {
+		if (color) {
+			System.out.print(" W King ");
+		} else {
+			System.out.print(" B King ");
+		}
+	}
+	
+	public boolean getHasMoved() {
+		return hasMoved;
+	}
+
+	public HashSet<Short> possibleMoves(Board board, int line, int colonne) {
+		HashSet<Short> moves = new HashSet<>();
+		short new_coordinate;
+		
+		int[][] positions_atteignables = {{line-1, colonne-1}, {line-1, colonne}, {line-1, colonne+1}, {line, colonne+1}, {line+1, colonne+1}, {line+1, colonne}, {line+1, colonne-1}, {line, colonne-1}};
+		for (int k=0; k<positions_atteignables.length; k++) {
+
+			int i_att = positions_atteignables[k][0];
+			int j_att = positions_atteignables[k][1];
+			
+			if (i_att >=0 && i_att <8 && j_att >=0 && j_att <8) {
+				if (board.board[i_att][j_att] == null) {
+					new_coordinate = (short) (10*i_att + j_att);
+					moves.add(new_coordinate);
+				} else if (board.board[i_att][j_att].color != color) {
+					new_coordinate = (short) (10*i_att + j_att);
+					moves.add(new_coordinate);
+				}
+			}
+		}
+		return moves;
+	}
+	
+	public boolean isInCheck(Board board, int line, int column) { // checks if the square of the King is reachable by an opponent's piece
+		short king_square = (short)(10*line + column);
+		for (int k=0; k<8; k++) {
+			for (int l=0; l<8; l++) {
+				if (board.board[k][l] != null && board.board[k][l].color != color) { //enemy piece on this square
+					HashSet<Short> opponentsMoves = board.board[k][l].possibleMoves(board, k, l);
+					if (opponentsMoves.contains(king_square)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+}

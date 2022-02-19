@@ -1,0 +1,25 @@
+package game.pieces;
+
+import java.util.HashSet;
+
+import game.Board;
+import game.pieces.PieceTypeClass.PieceType;
+
+public class NonePiece extends Piece{
+
+	public NonePiece() {
+		super(PieceType.None, true);
+	}
+
+	@Override
+	public void display() {
+		System.out.print("        ");
+	}
+
+	@Override
+	public HashSet<Short> possibleMoves(Board board, int i, int j) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

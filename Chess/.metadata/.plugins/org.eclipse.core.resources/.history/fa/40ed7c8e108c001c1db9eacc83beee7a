@@ -1,0 +1,34 @@
+package game;
+
+import game.pieces.PieceTypeClass.PieceType;
+
+public class Move {
+	
+	private PieceType movedPiece;
+	private boolean colorOfPiece;
+	private short startSquare;
+	private short landingSquare;
+
+	public Move(final PieceType movedPiece, final boolean colorOfPiece, final short startSquare, final short landingSquare) {
+		this.movedPiece = movedPiece;
+		this.colorOfPiece = colorOfPiece;
+		this.startSquare = startSquare;
+		this.landingSquare = landingSquare;
+	}
+	
+	public PieceType getMovedPiece() {
+		return movedPiece;
+	}
+	
+	public boolean getColorOfPiece() {
+		return colorOfPiece;
+	}
+	
+	public short getStartSquare() {
+		return startSquare;
+	}
+	
+	public short getLandingSquare() {
+		return landingSquare;
+	}
+}

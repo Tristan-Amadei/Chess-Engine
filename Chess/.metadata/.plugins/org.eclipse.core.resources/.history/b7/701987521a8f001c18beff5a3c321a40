@@ -1,0 +1,39 @@
+package game.adversary;
+
+import game.*;
+import game.pieces.*;
+
+public class Evaluation {
+	
+	public static double pieceEvaluation(Piece piece) {
+		int color_coefficient;
+		if (piece.getColor()) {
+			color_coefficient = 1;
+		} else {
+			color_coefficient = -1;
+		}
+		switch(piece.getType()) {
+		case Pawn:
+			return color_coefficient * 100;
+		case Knight:
+			return color_coefficient * 320;
+		case Bishop:
+			return color_coefficient * 330;
+		case Rook:
+			return color_coefficient * 500;
+		case Queen:
+			return color_coefficient * 900;
+		case King:
+			return color_coefficient * Double.POSITIVE_INFINITY;
+		}
+		return 0;
+	}
+	
+	public static double boardEvaluation(Board board) {
+		int boardEval = 0;
+		for (short piece_square : board.inGamePieces) {
+			boardEval += pieceEvaluation(board.board[piece_square/10][piece_square - 10*(piece_square/10)]);
+		}
+		return boardEval;
+	}
+}

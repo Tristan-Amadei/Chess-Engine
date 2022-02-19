@@ -1,0 +1,38 @@
+package game.opponent;
+
+import java.util.List;
+
+import game.*;
+
+public class Engine {	
+	
+	public Move bestMove;
+
+	public double alpha_beta_negamax(Board board, double alpha, double beta, int depth) {
+		if (depth <= 0) {
+			return Evaluation.boardEvaluation(board);
+		}
+		
+		List<Move> allMoves = board.allLegalMoves();
+		for (Move move : allMoves) {
+			move.playMove(board);
+			double score = (-1)*alpha_beta_negamax(board, (-1)*beta, (-1)*alpha, depth-1);
+			board.unmakeMove();
+			if (score >= alpha) {
+				alpha = score;
+				bestMove = move;
+				if (alpha >= beta) {
+					break;
+				}
+			}
+		}
+		return alpha;
+	}
+	
+	public static void playBestMove(Board board, int depth) {
+		Engine engine = new Engine();
+		engine.alpha_beta_negamax(board, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, depth);
+		engine.bestMove.playMove(board);
+	}
+	
+}

@@ -1,0 +1,32 @@
+package game;
+
+import java.util.HashSet;
+import java.util.List;
+
+import game.opponent.*;
+import game.pieces.*;
+
+public class Main {
+
+	public static void main(String[] args) throws IllegalMoveException {
+		
+		long t0 = System.currentTimeMillis();
+		
+		Board board = new Board();
+		board.newGameBoard();
+		
+		board.display();
+		System.out.println();
+		Engine.playBestMove(board, 5);
+		Engine.playBestMove(board, 6);
+		//Engine.playBestMove(board, 8);
+		//board.playInConsole();
+		 
+		 
+		
+		
+		board.display();
+		long t1 = System.currentTimeMillis();
+		System.out.println("Total time: " + (t1-t0) + " ms");
+	}
+}

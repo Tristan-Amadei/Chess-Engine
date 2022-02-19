@@ -1,0 +1,28 @@
+package game.tests;
+
+import game.*;
+import game.pieces.*;
+import game.tests.GamePlay;
+
+public class RunningTests {
+
+	public static void main(String[] args) {
+		
+		Board testBoard = new Board();
+		testBoard.newGameBoard();
+		
+		GamePlay gamePlay = new GamePlay();
+		gamePlay.start();
+		/*
+		for (int depth = 1; depth<10; depth++) {
+			long t0 = System.currentTimeMillis();
+
+			int nbOfMoves = GamePlay.numberOfMoves(testBoard, depth);
+			long t1 = System.currentTimeMillis();
+			System.out.println("Total time: " + (t1-t0) + " ms for depth " + depth);
+			System.out.println("Number of moves for depth " + depth + ": " + nbOfMoves + "\n");
+		}
+		*/
+	}
+
+}

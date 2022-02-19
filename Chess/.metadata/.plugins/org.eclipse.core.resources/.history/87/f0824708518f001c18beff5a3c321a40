@@ -1,0 +1,31 @@
+package game;
+
+import java.util.HashSet;
+import java.util.List;
+
+import game.MoveTypeClass.MoveType;
+import game.opponent.*;
+import game.pieces.*;
+import game.pieces.PieceTypeClass.PieceType;
+
+public class Main {
+
+	public static void main(String[] args) throws IllegalMoveException {
+		
+		long t0 = System.currentTimeMillis();
+		
+		Board board = new Board();
+		board.newGameBoard();
+		
+		//Engine.playBestMove(board, 8);
+		//board.playInConsole();
+		//Move(final PieceType movedPiece, final boolean colorOfPiece, final short startSquare, final short landingSquare, final PieceType capturedPiece, final MoveType moveType)
+		 Engine engine = new Engine();
+		 Engine.playBestMove_alphaBeta(board, 3, board.colorToPlay);
+		
+		
+		board.display();
+		long t1 = System.currentTimeMillis();
+		System.out.println("Total time: " + (t1-t0) + " ms");
+	}
+}

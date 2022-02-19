@@ -1,0 +1,13 @@
+package game;
+
+public class GameStateClass {
+	
+	public enum GameState {
+		Normal, 
+		EnPassant,
+		KingSideCastle,
+		QueenSideCastle,
+		Promotion
+	}
+
+}
