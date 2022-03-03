@@ -1,14 +1,7 @@
 package game.tests;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-
 import game.*;
 import game.opponent.Engine;
-import game.pieces.*;
-import game.tests.GamePlay;
-import gui.RunningGUI;
 
 public class RunningTests {
 

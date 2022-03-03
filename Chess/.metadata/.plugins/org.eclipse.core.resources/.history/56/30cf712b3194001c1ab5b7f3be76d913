@@ -1,0 +1,12 @@
+package game.opponent;
+
+import java.util.*;
+
+import game.Move;
+
+public class TranspositionTable {
+	
+	public static Hashtable<Long, Move> moveTable = new Hashtable<>();
+	public static Hashtable<Long, Double> evalTable = new Hashtable<>();
+
+}

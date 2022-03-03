@@ -1,23 +1,22 @@
 package gui;
 
 import game.Board;
-import game.opponent.Engine;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
 public class RunningGUI extends Application {
 
 	public static Board gameBoard;
-
+	
 	public static void main(String[] args) {
-		launch(args);
+		RunningGUI.launch(args);
 	}
 
 	@Override

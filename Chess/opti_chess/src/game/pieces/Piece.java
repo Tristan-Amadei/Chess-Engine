@@ -355,6 +355,9 @@ public abstract class Piece {
 
 	public boolean checkMoveIsIllegal(Board board, int src_line, int src_column, int dest_line, int dest_column)
 			throws IllegalMoveException {
+		if (board.board[src_line][src_column].color != board.colorToPlay) {
+			return true;
+		}
 		try {
 			pawnPromotion_white(board, src_line, src_column, dest_line, dest_column);
 		} catch (IllegalMoveException promotionWhiteIllegal) {

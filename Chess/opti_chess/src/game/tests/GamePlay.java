@@ -1,7 +1,6 @@
 package game.tests;
 
 import java.util.HashSet;
-import java.util.List;
 
 import game.Board;
 import game.Move;

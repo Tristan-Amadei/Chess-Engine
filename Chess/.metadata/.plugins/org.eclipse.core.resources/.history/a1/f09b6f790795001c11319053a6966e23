@@ -1,0 +1,50 @@
+package game;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
+import gui.RunningGUI;
+
+public class Main {
+
+	public static void main(String[] args) throws IllegalMoveException {
+		
+		long t0 = System.currentTimeMillis();
+
+		Board board = new Board();
+		board.newGameBoard();
+		
+		
+		// board.playInConsole();
+		
+		board.display();
+		long t1 = System.currentTimeMillis();
+		System.out.println("Total time: " + (t1 - t0) + " ms");
+	}
+	
+	public static void randomMoves(Board board) {
+		List<Long> Keys = new ArrayList<>();
+		List<Move> moves = board.allLegalMoves();
+		while (moves.size() > 0) {
+			Random rand = new Random();
+			Move chosenMove = moves.get(rand.nextInt(moves.size()));
+			chosenMove.playMove(board);
+			
+			long zKey_position = board.zKey.getZobristHash(board);
+			Keys.add(zKey_position);
+			
+			board.display();
+			moves = board.allLegalMoves();
+		}
+		Set<Long> set = new HashSet<Long>(keys);
+		if (set.size() < keys.size()) {
+			System.out.println("Zobrist Keys doubled");
+		} else {
+			System.out.println("All Keys are unique");
+		}
+		System.out.println
+	}
+}

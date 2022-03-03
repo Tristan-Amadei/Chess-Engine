@@ -10,6 +10,8 @@ import game.pieces.PieceTypeClass.PieceType;
 import game.MoveTypeClass.MoveType;
 import game.opponent.Engine;
 import game.opponent.Evaluation;
+import game.opponent.TranspositionTable;
+import game.opponent.ZobristKey;
 
 public class Board {
 
@@ -20,12 +22,18 @@ public class Board {
 	public List<Short> inGamePieces;
 	public short whiteKingPosition;
 	public short blackKingPosition;
+	public ZobristKey zKey;
+	public TranspositionTable table;
 
 	public Board() {
 		Piece[][] gameBoard = new Piece[8][8];
 		this.board = gameBoard;
 		this.movesPlayed = new ArrayList<Move>();
 		this.inGamePieces = new ArrayList<Short>();
+		ZobristKey zKey = new ZobristKey();
+		zKey.zobristFillArray();
+		this.zKey = zKey;
+		this.table = new TranspositionTable();
 	}
 
 	public void newGameBoard() {
@@ -133,7 +141,7 @@ public class Board {
 					} catch (IllegalMoveException illegal) {
 						System.out.println("Invalid Move");
 					} catch (Exception e) {
-						System.out.println(e.getStackTrace());
+						System.out.println("Bug with the code");
 					}
 				}
 
@@ -370,6 +378,7 @@ public class Board {
 		case Promotion:
 			unmakeMovePromotion();
 			break;
+		default: break;
 		}
 	}
 
@@ -381,20 +390,6 @@ public class Board {
 		}
 	}
 
-	// function that checks whether the white king has already moved during the game
-	// or not
-	// used to properly define the .hasMoved of said king inside the unmakeMove()
-	// function
-	/*
-	 * public boolean whiteKingHasAlreadyMoved() { if (whiteKingPosition !=
-	 * (short)74) { return true; } short possible_square_to_move_to[] = {(short)73,
-	 * (short)75, (short)63, (short)64, (short)65}; for (short square :
-	 * possible_square_to_move_to) { if (movesPlayed.contains((Object) square)) {
-	 * return true; } } for (int i=0; i<movesPlayed.size()-1; i++) { Move move =
-	 * movesPlayed.get(i); if ((move.getMoveType() == MoveType.KingSideCastle ||
-	 * move.getMoveType() == MoveType.QueenSideCastle) && move.getColorOfPiece()) {
-	 * return true; } } return false; }
-	 */
 	public boolean whiteKingHasAlreadyMoved() {
 		if (whiteKingPosition != (short) 74) {
 			return true;
@@ -428,17 +423,6 @@ public class Board {
 		}
 		return false;
 	}
-
-	/*
-	 * public boolean blackKingHasAlreadyMoved() { if (blackKingPosition !=
-	 * (short)04) { return true; } short possible_square_to_move_to[] = {(short)03,
-	 * (short)05, (short)03, (short)04, (short)05}; for (short square :
-	 * possible_square_to_move_to) { if (movesPlayed.contains((Object) square)) {
-	 * return true; } } for (int i=0; i<movesPlayed.size()-1; i++) { Move move =
-	 * movesPlayed.get(i); if ((move.getMoveType() == MoveType.KingSideCastle ||
-	 * move.getMoveType() == MoveType.QueenSideCastle) && !move.getColorOfPiece()) {
-	 * return true; } } return false; }
-	 */
 
 	public boolean whiteRook77hasAlreadyMoved() {
 		if (board[7][7] == null || !(board[7][7].getType() == PieceType.Rook && board[7][7].getColor())) {
@@ -495,7 +479,7 @@ public class Board {
 		}
 		return false;
 	}
-
+	
 	public List<Move> allLegalMoves() {
 		List<Short> copy = new ArrayList<Short>();
 		copy.addAll(inGamePieces);
@@ -506,10 +490,35 @@ public class Board {
 			Piece piece = board[line][col];
 			HashSet<Short> moves = piece.legalMoves(this, line, col);
 			for (short move_square : moves) {
-				Move move = new Move(piece.getType(), piece.getColor(), piece_square, move_square, null, null);
-				allMoves.add(move);
+				Move primitiveMove = new Move(piece.getType(), piece.getColor(), piece_square, move_square, null, MoveType.Normal);
+				Move elaborateMove = primitiveMove.returnMoveFromHashSet(this, piece.getType(), piece.getColor(), piece_square, move_square);
+				allMoves.add(elaborateMove);
 			}
 		}
 		return allMoves;
+	}
+	
+	public List<Move> allCaptureMoves() {
+		List<Move> moves = this.allLegalMoves();
+		List<Move> captures = new ArrayList<Move>();
+		for (Move move : moves) {
+			if (move.getCapturedPiece() != null) {
+				captures.add(move);
+			}
+		}
+		return captures;
+	}
+	
+	public HashSet<Short> allPossibleMoveSquares(boolean color) {
+		HashSet<Short> moveSquares = new HashSet<>();
+		for (short moveSquare : moveSquares) {
+			if (board[moveSquare/10][moveSquare*10].getColor() == color) {
+				moveSquares.addAll(board[moveSquare/10][moveSquare*10].possibleMoves(this, moveSquare/10, moveSquare*10));
+				if (board[moveSquare/10][moveSquare*10].getType() == PieceType.Pawn) {
+					moveSquares.addAll(((Pawn) board[moveSquare/10][moveSquare*10]).enPassant(this, moveSquare/10, moveSquare*10));
+				}
+			}
+		}
+		return moveSquares;
 	}
 }

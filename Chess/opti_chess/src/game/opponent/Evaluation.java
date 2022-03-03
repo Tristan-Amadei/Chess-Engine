@@ -30,37 +30,58 @@ public class Evaluation {
 		return GameState.Stalemate;
 	}
 
-	public static double pieceEvaluation(Piece piece) {
-		int color_coefficient;
-		if (piece.getColor()) {
-			color_coefficient = 1;
-		} else {
-			color_coefficient = -1;
-		}
-		switch (piece.getType()) {
+	public static double pieceTypeEvaluation(PieceType piece) {
+		switch (piece) {
 		case Pawn:
-			return color_coefficient * 100;
+			return 100;
 		case Knight:
-			return color_coefficient * 320;
+			return 320;
 		case Bishop:
-			return color_coefficient * 330;
+			return 330;
 		case Rook:
-			return color_coefficient * 500;
+			return 500;
 		case Queen:
-			return color_coefficient * 900;
+			return 900;
 		case King:
-			return color_coefficient * Double.POSITIVE_INFINITY;
+			return Double.POSITIVE_INFINITY;
 		}
 		return 0;
+	}
+	
+	public static double pieceEvaluation(Piece piece) {
+		if (piece.getColor()) {
+			return pieceTypeEvaluation(piece.getType());
+		}
+		return (-1)*pieceTypeEvaluation(piece.getType());
 	}
 
 	public static double rawBoardEvaluation(Board board) {
 		int boardEval = 0;
+		int WbishopCounter = 0; 
+		int BbishopCounter = 0; 
 		for (short piece_square : board.inGamePieces) {
-			if (board.board[piece_square / 10][piece_square - 10 * (piece_square / 10)].getType() != PieceType.King) {
+			if (board.board[piece_square / 10][piece_square - 10 * (piece_square / 10)].getType() == PieceType.Bishop) {
+				if (board.board[piece_square / 10][piece_square - 10 * (piece_square / 10)].getColor()) {
+					WbishopCounter++;
+				} else {
+					BbishopCounter++;
+				}
+			}
+			else if (board.board[piece_square / 10][piece_square - 10 * (piece_square / 10)].getType() != PieceType.King) {
 				boardEval += pieceEvaluation(board.board[piece_square / 10][piece_square - 10 * (piece_square / 10)]);
 			}
 		}
+		if (WbishopCounter >= 2) {
+			boardEval += 330*WbishopCounter;
+		} else {
+			boardEval += 250*WbishopCounter;
+		}
+		
+		if (BbishopCounter >= 2) {
+			boardEval -= 330*BbishopCounter;
+		} else {
+			boardEval -= 250*BbishopCounter;
+		} 
 		return boardEval;
 	}
 

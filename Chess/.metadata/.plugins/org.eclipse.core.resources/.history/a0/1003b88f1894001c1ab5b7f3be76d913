@@ -1,0 +1,15 @@
+package game.opponent;
+
+import java.security.*;
+
+public class ZobristKey {
+
+	static long zArray[][][] = new long[2][6][64];
+    static long zEnPassant[] = new long[8];
+    static long zCastle[] = new long[4];
+    static long zBlackMove;
+    public static long random64() {
+        SecureRandom random = new SecureRandom();
+        return random.nextLong();
+    }
+}

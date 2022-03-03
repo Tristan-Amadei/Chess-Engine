@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="4.5.3" sequence="2" timestamp="1645621296454" analysisTimestamp="1645621294036" release="">
+  <Project projectName="opti_chess">
+    <Jar>C:\Users\trist\OneDrive\Bureau\Java Projects\Chess\opti_chess\bin</Jar>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\Chess\opti_chess\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx.base.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx.controls.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx.fxml.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx.graphics.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx.media.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx.swing.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx.web.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\trist\OneDrive\Bureau\Java Projects\JavaFX Library\javafx-sdk-17.0.2\lib\javafx-swt.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jdk-16\lib\jrt-fs.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\trist\OneDrive\Bureau\Java Projects\Chess\opti_chess\images</SrcDir>
+    <SrcDir>C:\Users\trist\OneDrive\Bureau\Java Projects\Chess\opti_chess\src</SrcDir>
+  </Project>
+  <BugInstance type="DMI_INVOKING_TOSTRING_ON_ARRAY" priority="2" rank="10" abbrev="USELESS_STRING" category="CORRECTNESS" first="1" last="1" removedByChange="true">
+    <Class classname="game.Board">
+      <SourceLine classname="game.Board" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    </Class>
+    <Method classname="game.Board" name="playInConsole" signature="()V" isStatic="false">
+      <SourceLine classname="game.Board" start="104" end="152" startBytecode="0" endBytecode="864" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    </Method>
+    <Method classname="java.lang.Throwable" name="getStackTrace" signature="()[Ljava/lang/StackTraceElement;" isStatic="false" role="METHOD_RETURN_VALUE_OF">
+      <SourceLine classname="java.lang.Throwable" start="831" end="831" startBytecode="0" endBytecode="52" sourcefile="Throwable.java" sourcepath="java/lang/Throwable.java"/>
+    </Method>
+    <SourceLine classname="game.Board" start="141" end="141" startBytecode="256" endBytecode="256" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    <SourceLine classname="game.Board" start="141" end="141" startBytecode="256" endBytecode="256" sourcefile="Board.java" sourcepath="game/Board.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N" first="1">
+    <Class classname="game.Board">
+      <SourceLine classname="game.Board" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    </Class>
+    <Method classname="game.Board" name="playInConsole" signature="()V" isStatic="false">
+      <SourceLine classname="game.Board" start="104" end="152" startBytecode="0" endBytecode="861" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="566" end="567" startBytecode="0" endBytecode="71" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="game.Board" start="104" end="104" startBytecode="7" endBytecode="7" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    <SourceLine classname="game.Board" start="104" end="104" startBytecode="7" endBytecode="7" sourcefile="Board.java" sourcepath="game/Board.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE" first="1">
+    <Class classname="game.Board">
+      <SourceLine classname="game.Board" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    </Class>
+    <Method classname="game.Board" name="unmakeMoveNormal" signature="()V" isStatic="false">
+      <SourceLine classname="game.Board" start="249" end="315" startBytecode="0" endBytecode="1309" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    </Method>
+    <SourceLine classname="game.Board" start="296" end="307" startBytecode="477" endBytecode="604" sourcefile="Board.java" sourcepath="game/Board.java"/>
+    <SourceLine classname="game.Board" start="296" end="307" startBytecode="477" endBytecode="604" sourcefile="Board.java" sourcepath="game/Board.java"/>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="game.Move">
+      <SourceLine classname="game.Move" sourcefile="Move.java" sourcepath="game/Move.java"/>
+    </Class>
+    <Method classname="game.Move" name="EdgesBoardSquares" signature="()Ljava/util/List;" isStatic="true">
+      <SourceLine classname="game.Move" start="85" end="103" startBytecode="0" endBytecode="328" sourcefile="Move.java" sourcepath="game/Move.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="NM_METHOD_NAMING_CONVENTION" priority="2" rank="16" abbrev="Nm" category="BAD_PRACTICE" first="1">
+    <Class classname="game.Move">
+      <SourceLine classname="game.Move" sourcefile="Move.java" sourcepath="game/Move.java"/>
+    </Class>
+    <Method classname="game.Move" name="MiddleBoardSquares" signature="()Ljava/util/List;" isStatic="true">
+      <SourceLine classname="game.Move" start="63" end="81" startBytecode="0" endBytecode="329" sourcefile="Move.java" sourcepath="game/Move.java"/>
+    </Method>
+  </BugInstance>
+  <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" rank="17" abbrev="DLS" category="STYLE" first="1">
+    <Class classname="game.opponent.Engine">
+      <SourceLine classname="game.opponent.Engine" sourcefile="Engine.java" sourcepath="game/opponent/Engine.java"/>
+    </Class>
+    <Method classname="game.opponent.Engine" name="playBestMove_iterativeDeepening" signature="(Lgame/Board;IZ)V" isStatic="true">
+      <SourceLine classname="game.opponent.Engine" start="244" end="279" startBytecode="0" endBytecode="161" sourcefile="Engine.java" sourcepath="game/opponent/Engine.java"/>
+    </Method>
+    <LocalVariable name="en" register="7" pc="19" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="game.opponent.Engine" start="248" end="248" startBytecode="17" endBytecode="17" sourcefile="Engine.java" sourcepath="game/opponent/Engine.java"/>
+    <SourceLine classname="game.opponent.Engine" start="248" end="248" startBytecode="17" endBytecode="17" sourcefile="Engine.java" sourcepath="game/opponent/Engine.java"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="en"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE" first="1">
+    <Class classname="game.opponent.Evaluation">
+      <SourceLine classname="game.opponent.Evaluation" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Class>
+    <Method classname="game.opponent.Evaluation" name="bonusSquareBishop" signature="(IILgame/Board;)I" isStatic="true">
+      <SourceLine classname="game.opponent.Evaluation" start="235" end="475" startBytecode="0" endBytecode="1529" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Method>
+    <SourceLine classname="game.opponent.Evaluation" start="444" end="467" startBytecode="723" endBytecode="812" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    <SourceLine classname="game.opponent.Evaluation" start="444" end="467" startBytecode="723" endBytecode="812" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE" first="1">
+    <Class classname="game.opponent.Evaluation">
+      <SourceLine classname="game.opponent.Evaluation" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Class>
+    <Method classname="game.opponent.Evaluation" name="bonusSquareKingEndGame" signature="(IILgame/Board;)I" isStatic="true">
+      <SourceLine classname="game.opponent.Evaluation" start="1365" end="1605" startBytecode="0" endBytecode="1549" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Method>
+    <SourceLine classname="game.opponent.Evaluation" start="1574" end="1597" startBytecode="741" endBytecode="832" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    <SourceLine classname="game.opponent.Evaluation" start="1574" end="1597" startBytecode="741" endBytecode="832" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE" first="1">
+    <Class classname="game.opponent.Evaluation">
+      <SourceLine classname="game.opponent.Evaluation" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Class>
+    <Method classname="game.opponent.Evaluation" name="bonusSquareKingMiddleGame" signature="(IILgame/Board;)I" isStatic="true">
+      <SourceLine classname="game.opponent.Evaluation" start="1113" end="1353" startBytecode="0" endBytecode="1551" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Method>
+    <SourceLine classname="game.opponent.Evaluation" start="1322" end="1345" startBytecode="745" endBytecode="834" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    <SourceLine classname="game.opponent.Evaluation" start="1322" end="1345" startBytecode="745" endBytecode="834" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE" first="1">
+    <Class classname="game.opponent.Evaluation">
+      <SourceLine classname="game.opponent.Evaluation" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Class>
+    <Method classname="game.opponent.Evaluation" name="bonusSquarePawn" signature="(IILgame/Board;)I" isStatic="true">
+      <SourceLine classname="game.opponent.Evaluation" start="938" end="1100" startBytecode="0" endBytecode="1062" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Method>
+    <SourceLine classname="game.opponent.Evaluation" start="942" end="1095" startBytecode="31" endBytecode="551" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    <SourceLine classname="game.opponent.Evaluation" start="942" end="1095" startBytecode="31" endBytecode="551" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE" first="1">
+    <Class classname="game.opponent.Evaluation">
+      <SourceLine classname="game.opponent.Evaluation" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Class>
+    <Method classname="game.opponent.Evaluation" name="bonusSquareQueen" signature="(IILgame/Board;)I" isStatic="true">
+      <SourceLine classname="game.opponent.Evaluation" start="713" end="926" startBytecode="0" endBytecode="1357" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Method>
+    <SourceLine classname="game.opponent.Evaluation" start="717" end="922" startBytecode="31" endBytecode="708" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    <SourceLine classname="game.opponent.Evaluation" start="717" end="922" startBytecode="31" endBytecode="708" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+  </BugInstance>
+  <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" rank="19" abbrev="SF" category="STYLE" first="1">
+    <Class classname="game.opponent.Evaluation">
+      <SourceLine classname="game.opponent.Evaluation" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Class>
+    <Method classname="game.opponent.Evaluation" name="bonusSquareRook" signature="(IILgame/Board;)I" isStatic="true">
+      <SourceLine classname="game.opponent.Evaluation" start="487" end="701" startBytecode="0" endBytecode="1344" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    </Method>
+    <SourceLine classname="game.opponent.Evaluation" start="670" end="693" startBytecode="615" endBytecode="696" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+    <SourceLine classname="game.opponent.Evaluation" start="670" end="693" startBytecode="615" endBytecode="696" sourcefile="Evaluation.java" sourcepath="game/opponent/Evaluation.java"/>
+  </BugInstance>
+  <BugInstance type="MS_FINAL_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="game.opponent.TranspositionTable">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Class>
+    <Field classname="game.opponent.TranspositionTable" name="alphaTable" signature="Ljava/util/Hashtable;" isStatic="true">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Field>
+    <SourceLine classname="game.opponent.TranspositionTable" start="19" end="19" startBytecode="27" endBytecode="27" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+  </BugInstance>
+  <BugInstance type="MS_FINAL_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="game.opponent.TranspositionTable">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Class>
+    <Field classname="game.opponent.TranspositionTable" name="betaTable" signature="Ljava/util/Hashtable;" isStatic="true">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Field>
+    <SourceLine classname="game.opponent.TranspositionTable" start="20" end="20" startBytecode="37" endBytecode="37" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+  </BugInstance>
+  <BugInstance type="MS_FINAL_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="game.opponent.TranspositionTable">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Class>
+    <Field classname="game.opponent.TranspositionTable" name="depthTable" signature="Ljava/util/Hashtable;" isStatic="true">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Field>
+    <SourceLine classname="game.opponent.TranspositionTable" start="21" end="21" startBytecode="47" endBytecode="47" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+  </BugInstance>
+  <BugInstance type="MS_FINAL_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="game.opponent.TranspositionTable">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Class>
+    <Field classname="game.opponent.TranspositionTable" name="evalTable" signature="Ljava/util/Hashtable;" isStatic="true">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Field>
+    <SourceLine classname="game.opponent.TranspositionTable" start="18" end="18" startBytecode="17" endBytecode="17" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+  </BugInstance>
+  <BugInstance type="MS_FINAL_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="game.opponent.TranspositionTable">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Class>
+    <Field classname="game.opponent.TranspositionTable" name="flagTable" signature="Ljava/util/Hashtable;" isStatic="true">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Field>
+    <SourceLine classname="game.opponent.TranspositionTable" start="22" end="22" startBytecode="57" endBytecode="57" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+  </BugInstance>
+  <BugInstance type="MS_FINAL_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="game.opponent.TranspositionTable">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Class>
+    <Field classname="game.opponent.TranspositionTable" name="moveTable" signature="Ljava/util/Hashtable;" isStatic="true">
+      <SourceLine classname="game.opponent.TranspositionTable" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+    </Field>
+    <SourceLine classname="game.opponent.TranspositionTable" start="17" end="17" startBytecode="7" endBytecode="7" sourcefile="TranspositionTable.java" sourcepath="game/opponent/TranspositionTable.java"/>
+  </BugInstance>
+  <BugInstance type="DMI_RANDOM_USED_ONLY_ONCE" priority="1" rank="14" abbrev="DMI" category="BAD_PRACTICE" first="1" last="1" removedByChange="true">
+    <Class classname="game.opponent.ZobristKey">
+      <SourceLine classname="game.opponent.ZobristKey" sourcefile="ZobristKey.java" sourcepath="game/opponent/ZobristKey.java"/>
+    </Class>
+    <Method classname="game.opponent.ZobristKey" name="random64" signature="()J" isStatic="true">
+      <SourceLine classname="game.opponent.ZobristKey" start="18" end="19" startBytecode="0" endBytecode="58" sourcefile="ZobristKey.java" sourcepath="game/opponent/ZobristKey.java"/>
+    </Method>
+    <Method classname="java.security.SecureRandom" name="nextLong" signature="()J" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.security.SecureRandom" sourcefile="SecureRandom.java" sourcepath="java/security/SecureRandom.java"/>
+    </Method>
+    <SourceLine classname="game.opponent.ZobristKey" start="19" end="19" startBytecode="9" endBytecode="9" sourcefile="ZobristKey.java" sourcepath="game/opponent/ZobristKey.java"/>
+    <SourceLine classname="game.opponent.ZobristKey" start="19" end="19" startBytecode="9" endBytecode="9" sourcefile="ZobristKey.java" sourcepath="game/opponent/ZobristKey.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="game.opponent.ZobristKey">
+      <SourceLine classname="game.opponent.ZobristKey" sourcefile="ZobristKey.java" sourcepath="game/opponent/ZobristKey.java"/>
+    </Class>
+    <Field classname="game.opponent.ZobristKey" name="zBlackMove" signature="J" isStatic="false">
+      <SourceLine classname="game.opponent.ZobristKey" sourcefile="ZobristKey.java" sourcepath="game/opponent/ZobristKey.java"/>
+    </Field>
+    <SourceLine classname="game.opponent.ZobristKey" start="36" end="36" startBytecode="107" endBytecode="107" sourcefile="ZobristKey.java" sourcepath="game/opponent/ZobristKey.java"/>
+  </BugInstance>
+  <BugInstance type="DE_MIGHT_IGNORE" priority="2" rank="16" abbrev="DE" category="BAD_PRACTICE" first="1">
+    <Class classname="game.tests.GamePlay">
+      <SourceLine classname="game.tests.GamePlay" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    </Class>
+    <Method classname="game.tests.GamePlay" name="numberOfMoves" signature="(Lgame/Board;I)J" isStatic="true">
+      <SourceLine classname="game.tests.GamePlay" start="61" end="85" startBytecode="0" endBytecode="486" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    </Method>
+    <Class classname="java.lang.Exception" role="CLASS_EXCEPTION">
+      <SourceLine classname="java.lang.Exception" sourcefile="Exception.java" sourcepath="java/lang/Exception.java"/>
+    </Class>
+    <SourceLine classname="game.tests.GamePlay" start="75" end="75" startBytecode="157" endBytecode="157" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    <SourceLine classname="game.tests.GamePlay" start="75" end="75" startBytecode="157" endBytecode="157" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    <SourceLine classname="game.tests.GamePlay" start="75" end="75" startBytecode="157" endBytecode="157" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+  </BugInstance>
+  <BugInstance type="DE_MIGHT_IGNORE" priority="2" rank="16" abbrev="DE" category="BAD_PRACTICE" first="1">
+    <Class classname="game.tests.GamePlay">
+      <SourceLine classname="game.tests.GamePlay" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    </Class>
+    <Method classname="game.tests.GamePlay" name="run" signature="()V" isStatic="false">
+      <SourceLine classname="game.tests.GamePlay" start="29" end="45" startBytecode="0" endBytecode="397" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    </Method>
+    <Class classname="java.lang.Exception" role="CLASS_EXCEPTION">
+      <SourceLine classname="java.lang.Exception" sourcefile="Exception.java" sourcepath="java/lang/Exception.java"/>
+    </Class>
+    <SourceLine classname="game.tests.GamePlay" start="37" end="37" startBytecode="190" endBytecode="190" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    <SourceLine classname="game.tests.GamePlay" start="37" end="37" startBytecode="190" endBytecode="190" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+    <SourceLine classname="game.tests.GamePlay" start="37" end="37" startBytecode="190" endBytecode="190" sourcefile="GamePlay.java" sourcepath="game/tests/GamePlay.java"/>
+  </BugInstance>
+  <BugInstance type="DE_MIGHT_IGNORE" priority="2" rank="16" abbrev="DE" category="BAD_PRACTICE" first="1">
+    <Class classname="game.tests.RunningTests">
+      <SourceLine classname="game.tests.RunningTests" sourcefile="RunningTests.java" sourcepath="game/tests/RunningTests.java"/>
+    </Class>
+    <Method classname="game.tests.RunningTests" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="game.tests.RunningTests" start="53" end="75" startBytecode="0" endBytecode="417" sourcefile="RunningTests.java" sourcepath="game/tests/RunningTests.java"/>
+    </Method>
+    <Class classname="java.lang.Exception" role="CLASS_EXCEPTION">
+      <SourceLine classname="java.lang.Exception" sourcefile="Exception.java" sourcepath="java/lang/Exception.java"/>
+    </Class>
+    <SourceLine classname="game.tests.RunningTests" start="70" end="70" startBytecode="218" endBytecode="218" sourcefile="RunningTests.java" sourcepath="game/tests/RunningTests.java"/>
+    <SourceLine classname="game.tests.RunningTests" start="70" end="70" startBytecode="218" endBytecode="218" sourcefile="RunningTests.java" sourcepath="game/tests/RunningTests.java"/>
+    <SourceLine classname="game.tests.RunningTests" start="70" end="70" startBytecode="218" endBytecode="218" sourcefile="RunningTests.java" sourcepath="game/tests/RunningTests.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BBishop1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1409" end="1409" startBytecode="354" endBytecode="354" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1409" end="1409" startBytecode="354" endBytecode="354" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BBishop2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1412" end="1412" startBytecode="385" endBytecode="385" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1412" end="1412" startBytecode="385" endBytecode="385" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BKing" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1424" end="1424" startBytecode="509" endBytecode="509" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1424" end="1424" startBytecode="509" endBytecode="509" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BKnight1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1397" end="1397" startBytecode="230" endBytecode="230" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1397" end="1397" startBytecode="230" endBytecode="230" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BKnight2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1400" end="1400" startBytecode="261" endBytecode="261" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1400" end="1400" startBytecode="261" endBytecode="261" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1499" end="1499" startBytecode="1284" endBytecode="1284" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1499" end="1499" startBytecode="1284" endBytecode="1284" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1502" end="1502" startBytecode="1315" endBytecode="1315" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1502" end="1502" startBytecode="1315" endBytecode="1315" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn3" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1505" end="1505" startBytecode="1346" endBytecode="1346" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1505" end="1505" startBytecode="1346" endBytecode="1346" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn4" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1508" end="1508" startBytecode="1377" endBytecode="1377" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1508" end="1508" startBytecode="1377" endBytecode="1377" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn5" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1511" end="1511" startBytecode="1408" endBytecode="1408" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1511" end="1511" startBytecode="1408" endBytecode="1408" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn6" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1514" end="1514" startBytecode="1439" endBytecode="1439" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1514" end="1514" startBytecode="1439" endBytecode="1439" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn7" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1517" end="1517" startBytecode="1470" endBytecode="1470" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1517" end="1517" startBytecode="1470" endBytecode="1470" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BPawn8" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1520" end="1520" startBytecode="1501" endBytecode="1501" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1520" end="1520" startBytecode="1501" endBytecode="1501" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BQueen" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1418" end="1418" startBytecode="447" endBytecode="447" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1418" end="1418" startBytecode="447" endBytecode="447" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BRook1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1385" end="1385" startBytecode="106" endBytecode="106" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1385" end="1385" startBytecode="106" endBytecode="106" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="BRook2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1388" end="1388" startBytecode="137" endBytecode="137" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1388" end="1388" startBytecode="137" endBytecode="137" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WBishop1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1403" end="1403" startBytecode="292" endBytecode="292" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1403" end="1403" startBytecode="292" endBytecode="292" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WBishop2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1406" end="1406" startBytecode="323" endBytecode="323" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1406" end="1406" startBytecode="323" endBytecode="323" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WKing" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1421" end="1421" startBytecode="478" endBytecode="478" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1421" end="1421" startBytecode="478" endBytecode="478" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WKnight1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1391" end="1391" startBytecode="168" endBytecode="168" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1391" end="1391" startBytecode="168" endBytecode="168" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WKnight2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1394" end="1394" startBytecode="199" endBytecode="199" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1394" end="1394" startBytecode="199" endBytecode="199" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1475" end="1475" startBytecode="1036" endBytecode="1036" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1475" end="1475" startBytecode="1036" endBytecode="1036" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1478" end="1478" startBytecode="1067" endBytecode="1067" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1478" end="1478" startBytecode="1067" endBytecode="1067" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn3" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1481" end="1481" startBytecode="1098" endBytecode="1098" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1481" end="1481" startBytecode="1098" endBytecode="1098" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn4" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1484" end="1484" startBytecode="1129" endBytecode="1129" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1484" end="1484" startBytecode="1129" endBytecode="1129" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn5" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1487" end="1487" startBytecode="1160" endBytecode="1160" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1487" end="1487" startBytecode="1160" endBytecode="1160" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn6" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1490" end="1490" startBytecode="1191" endBytecode="1191" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1490" end="1490" startBytecode="1191" endBytecode="1191" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn7" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1493" end="1493" startBytecode="1222" endBytecode="1222" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1493" end="1493" startBytecode="1222" endBytecode="1222" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WPawn8" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1496" end="1496" startBytecode="1253" endBytecode="1253" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1496" end="1496" startBytecode="1253" endBytecode="1253" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WQueen" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1415" end="1415" startBytecode="416" endBytecode="416" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1415" end="1415" startBytecode="416" endBytecode="416" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WRook1" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1379" end="1379" startBytecode="44" endBytecode="44" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1379" end="1379" startBytecode="44" endBytecode="44" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Method classname="gui.Controller" name="getPieceOnCoordinate" signature="(DD)Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" start="1376" end="1522" startBytecode="0" endBytecode="2037" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Method>
+    <Field classname="gui.Controller" name="WRook2" signature="Ljavafx/scene/image/ImageView;" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="1382" end="1382" startBytecode="75" endBytecode="75" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    <SourceLine classname="gui.Controller" start="1382" end="1382" startBytecode="75" endBytecode="75" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbBishop1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="337" end="337" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbBishop2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="344" end="344" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbKing" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="372" end="372" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbKnight1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="309" end="309" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbKnight2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="316" end="316" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="435" end="435" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="442" end="442" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn3" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="449" end="449" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn4" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="456" end="456" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn5" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="463" end="463" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn6" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="470" end="470" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn7" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="477" end="477" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbPawn8" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="484" end="484" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbQueen" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="358" end="358" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbRook1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="281" end="281" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xbRook2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="288" end="288" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwBishop1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="323" end="323" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwBishop2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="330" end="330" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwKing" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="365" end="365" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwKnight1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="94" end="94" startBytecode="52" endBytecode="52" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwKnight2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="302" end="302" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="379" end="379" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="386" end="386" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn3" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="393" end="393" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn4" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="400" end="400" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn5" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="407" end="407" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn6" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="414" end="414" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn7" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="421" end="421" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwPawn8" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="428" end="428" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwQueen" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="351" end="351" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwRook1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="267" end="267" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="xwRook2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="274" end="274" startBytecode="14" endBytecode="14" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybBishop1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="338" end="338" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybBishop2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="345" end="345" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybKing" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="373" end="373" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybKnight1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="310" end="310" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybKnight2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="317" end="317" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="436" end="436" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="443" end="443" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn3" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="450" end="450" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn4" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="457" end="457" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn5" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="464" end="464" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn6" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="471" end="471" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn7" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="478" end="478" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybPawn8" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="485" end="485" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybQueen" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="359" end="359" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybRook1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="282" end="282" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ybRook2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="289" end="289" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywBishop1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="324" end="324" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywBishop2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="331" end="331" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywKing" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="366" end="366" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywKnight1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="95" end="95" startBytecode="59" endBytecode="59" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywKnight2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="303" end="303" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="380" end="380" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="387" end="387" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn3" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="394" end="394" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn4" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="401" end="401" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn5" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="408" end="408" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn6" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="415" end="415" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn7" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="422" end="422" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywPawn8" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="429" end="429" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywQueen" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="352" end="352" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywRook1" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="268" end="268" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE" first="1">
+    <Class classname="gui.Controller">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Class>
+    <Field classname="gui.Controller" name="ywRook2" signature="D" isStatic="false">
+      <SourceLine classname="gui.Controller" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+    </Field>
+    <SourceLine classname="gui.Controller" start="275" end="275" startBytecode="34" endBytecode="34" sourcefile="Controller.java" sourcepath="gui/Controller.java"/>
+  </BugInstance>
+  <BugInstance type="MS_PKGPROTECT" priority="2" rank="18" abbrev="MS" category="MALICIOUS_CODE" first="1">
+    <Class classname="gui.RunningGUI">
+      <SourceLine classname="gui.RunningGUI" sourcefile="RunningGUI.java" sourcepath="gui/RunningGUI.java"/>
+    </Class>
+    <Field classname="gui.RunningGUI" name="gameBoard" signature="Lgame/Board;" isStatic="true">
+      <SourceLine classname="gui.RunningGUI" sourcefile="RunningGUI.java" sourcepath="gui/RunningGUI.java"/>
+    </Field>
+  </BugInstance>
+  <BugInstance type="ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD" priority="1" rank="15" abbrev="ST" category="STYLE" first="1">
+    <Class classname="gui.RunningGUI">
+      <SourceLine classname="gui.RunningGUI" sourcefile="RunningGUI.java" sourcepath="gui/RunningGUI.java"/>
+    </Class>
+    <Method classname="gui.RunningGUI" name="start" signature="(Ljavafx/stage/Stage;)V" isStatic="false">
+      <SourceLine classname="gui.RunningGUI" start="24" end="48" startBytecode="0" endBytecode="279" sourcefile="RunningGUI.java" sourcepath="gui/RunningGUI.java"/>
+    </Method>
+    <Field classname="gui.RunningGUI" name="gameBoard" signature="Lgame/Board;" isStatic="true">
+      <SourceLine classname="gui.RunningGUI" sourcefile="RunningGUI.java" sourcepath="gui/RunningGUI.java"/>
+    </Field>
+    <SourceLine classname="gui.RunningGUI" start="24" end="24" startBytecode="7" endBytecode="7" sourcefile="RunningGUI.java" sourcepath="gui/RunningGUI.java"/>
+    <SourceLine classname="gui.RunningGUI" start="24" end="24" startBytecode="7" endBytecode="7" sourcefile="RunningGUI.java" sourcepath="gui/RunningGUI.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 23 Feb 2022 14:01:13 +0100" total_classes="31" referenced_classes="158" total_bugs="119" total_size="4270" num_packages="5" java_version="16" vm_version="16+36-2231" cpu_seconds="10.42" clock_seconds="2.43" peak_mbytes="1703.67" alloc_mbytes="4096.00" gc_seconds="0.00" priority_2="117" priority_1="2">
+    <PackageStats package="game" total_bugs="4" total_types="9" total_size="559" priority_2="3" priority_1="1">
+      <ClassStats class="game.Board" sourceFile="Board.java" interface="false" size="357" bugs="2" priority_2="1" priority_1="1"/>
+      <ClassStats class="game.GameStateClass" sourceFile="GameStateClass.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="game.GameStateClass$GameState" sourceFile="GameStateClass.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="game.IllegalMoveException" sourceFile="IllegalMoveException.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="game.Main" sourceFile="Main.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="game.Move" sourceFile="Move.java" interface="false" size="133" bugs="2" priority_2="2"/>
+      <ClassStats class="game.Move$1" sourceFile="Move.java" interface="false" size="7" bugs="0"/>
+      <ClassStats class="game.MoveTypeClass" sourceFile="MoveTypeClass.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="game.MoveTypeClass$MoveType" sourceFile="MoveTypeClass.java" interface="false" size="24" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="game.opponent" total_bugs="14" total_types="7" total_size="1263" priority_2="14">
+      <ClassStats class="game.opponent.Engine" sourceFile="Engine.java" interface="false" size="165" bugs="1" priority_2="1"/>
+      <ClassStats class="game.opponent.Evaluation" sourceFile="Evaluation.java" interface="false" size="926" bugs="6" priority_2="6"/>
+      <ClassStats class="game.opponent.TranspositionTable" sourceFile="TranspositionTable.java" interface="false" size="56" bugs="6" priority_2="6"/>
+      <ClassStats class="game.opponent.TranspositionTable$FLAG" sourceFile="TranspositionTable.java" interface="false" size="16" bugs="0"/>
+      <ClassStats class="game.opponent.TranspositionTableProbing" sourceFile="TranspositionTableProbing.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="game.opponent.TranspositionTableProbing$ProbingResult" sourceFile="TranspositionTableProbing.java" interface="false" size="12" bugs="0"/>
+      <ClassStats class="game.opponent.ZobristKey" sourceFile="ZobristKey.java" interface="false" size="83" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="game.pieces" total_bugs="0" total_types="9" total_size="603">
+      <ClassStats class="game.pieces.Bishop" sourceFile="Bishop.java" interface="false" size="65" bugs="0"/>
+      <ClassStats class="game.pieces.King" sourceFile="King.java" interface="false" size="92" bugs="0"/>
+      <ClassStats class="game.pieces.Knight" sourceFile="Knight.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="game.pieces.Pawn" sourceFile="Pawn.java" interface="false" size="83" bugs="0"/>
+      <ClassStats class="game.pieces.Piece" sourceFile="Piece.java" interface="false" size="228" bugs="0"/>
+      <ClassStats class="game.pieces.PieceTypeClass" sourceFile="PieceTypeClass.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="game.pieces.PieceTypeClass$PieceType" sourceFile="PieceTypeClass.java" interface="false" size="15" bugs="0"/>
+      <ClassStats class="game.pieces.Queen" sourceFile="Queen.java" interface="false" size="26" bugs="0"/>
+      <ClassStats class="game.pieces.Rook" sourceFile="Rook.java" interface="false" size="59" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="game.tests" total_bugs="3" total_types="2" total_size="158" priority_2="3">
+      <ClassStats class="game.tests.GamePlay" sourceFile="GamePlay.java" interface="false" size="136" bugs="2" priority_2="2"/>
+      <ClassStats class="game.tests.RunningTests" sourceFile="RunningTests.java" interface="false" size="22" bugs="1" priority_2="1"/>
+    </PackageStats>
+    <PackageStats package="gui" total_bugs="98" total_types="4" total_size="1687" priority_2="97" priority_1="1">
+      <ClassStats class="gui.Controller" sourceFile="Controller.java" interface="false" size="1650" bugs="96" priority_2="96"/>
+      <ClassStats class="gui.MainGUI" sourceFile="MainGUI.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="gui.RunningGUI" sourceFile="RunningGUI.java" interface="false" size="22" bugs="2" priority_2="1" priority_1="1"/>
+      <ClassStats class="gui.RunningGUI$1" sourceFile="RunningGUI.java" interface="false" size="10" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="357" invocations="1223" avgMicrosecondsPerInvocation="292" maxMicrosecondsPerInvocation="7249" standardDeviationMicrosecondsPerInvocation="632"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="171" invocations="237" avgMicrosecondsPerInvocation="723" maxMicrosecondsPerInvocation="51365" standardDeviationMicrosecondsPerInvocation="3421"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="146" invocations="256" avgMicrosecondsPerInvocation="573" maxMicrosecondsPerInvocation="47397" standardDeviationMicrosecondsPerInvocation="2981"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="120" invocations="239" avgMicrosecondsPerInvocation="506" maxMicrosecondsPerInvocation="34398" standardDeviationMicrosecondsPerInvocation="2279"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="108" invocations="2" avgMicrosecondsPerInvocation="54301" maxMicrosecondsPerInvocation="79838" standardDeviationMicrosecondsPerInvocation="25537"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="92" invocations="239" avgMicrosecondsPerInvocation="385" maxMicrosecondsPerInvocation="5715" standardDeviationMicrosecondsPerInvocation="620"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="81" invocations="1227" avgMicrosecondsPerInvocation="66" maxMicrosecondsPerInvocation="469" standardDeviationMicrosecondsPerInvocation="35"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="72" invocations="240" avgMicrosecondsPerInvocation="303" maxMicrosecondsPerInvocation="6044" standardDeviationMicrosecondsPerInvocation="483"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="71" invocations="158" avgMicrosecondsPerInvocation="454" maxMicrosecondsPerInvocation="8703" standardDeviationMicrosecondsPerInvocation="918"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="67" invocations="158" avgMicrosecondsPerInvocation="429" maxMicrosecondsPerInvocation="9834" standardDeviationMicrosecondsPerInvocation="959"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="56" invocations="228" avgMicrosecondsPerInvocation="247" maxMicrosecondsPerInvocation="4846" standardDeviationMicrosecondsPerInvocation="403"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="54" invocations="611" avgMicrosecondsPerInvocation="89" maxMicrosecondsPerInvocation="1168" standardDeviationMicrosecondsPerInvocation="103"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="50" invocations="239" avgMicrosecondsPerInvocation="212" maxMicrosecondsPerInvocation="9150" standardDeviationMicrosecondsPerInvocation="600"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.RuntimeExceptionCapture" totalMilliseconds="32" invocations="31" avgMicrosecondsPerInvocation="1051" maxMicrosecondsPerInvocation="24005" standardDeviationMicrosecondsPerInvocation="4207"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="27" invocations="239" avgMicrosecondsPerInvocation="116" maxMicrosecondsPerInvocation="2642" standardDeviationMicrosecondsPerInvocation="243"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="26" invocations="1173" avgMicrosecondsPerInvocation="22" maxMicrosecondsPerInvocation="647" standardDeviationMicrosecondsPerInvocation="45"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="25" invocations="158" avgMicrosecondsPerInvocation="158" maxMicrosecondsPerInvocation="3639" standardDeviationMicrosecondsPerInvocation="336"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="24" invocations="31" avgMicrosecondsPerInvocation="805" maxMicrosecondsPerInvocation="12758" standardDeviationMicrosecondsPerInvocation="2236"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="22" invocations="218" avgMicrosecondsPerInvocation="100" maxMicrosecondsPerInvocation="1491" standardDeviationMicrosecondsPerInvocation="165"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="20" invocations="31" avgMicrosecondsPerInvocation="665" maxMicrosecondsPerInvocation="6921" standardDeviationMicrosecondsPerInvocation="1265"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.LiveLocalStoreDataflowFactory" totalMilliseconds="18" invocations="237" avgMicrosecondsPerInvocation="77" maxMicrosecondsPerInvocation="1534" standardDeviationMicrosecondsPerInvocation="124"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SwitchFallthrough" totalMilliseconds="18" invocations="31" avgMicrosecondsPerInvocation="585" maxMicrosecondsPerInvocation="7300" standardDeviationMicrosecondsPerInvocation="1481"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="17" invocations="158" avgMicrosecondsPerInvocation="113" maxMicrosecondsPerInvocation="2857" standardDeviationMicrosecondsPerInvocation="265"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindOpenStream" totalMilliseconds="17" invocations="31" avgMicrosecondsPerInvocation="560" maxMicrosecondsPerInvocation="6772" standardDeviationMicrosecondsPerInvocation="1336"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="15" invocations="158" avgMicrosecondsPerInvocation="97" maxMicrosecondsPerInvocation="925" standardDeviationMicrosecondsPerInvocation="149"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.LoadOfKnownNullValue" totalMilliseconds="14" invocations="31" avgMicrosecondsPerInvocation="467" maxMicrosecondsPerInvocation="8203" standardDeviationMicrosecondsPerInvocation="1435"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="14" invocations="31" avgMicrosecondsPerInvocation="467" maxMicrosecondsPerInvocation="9414" standardDeviationMicrosecondsPerInvocation="1641"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.MethodReturnCheck" totalMilliseconds="14" invocations="31" avgMicrosecondsPerInvocation="456" maxMicrosecondsPerInvocation="4552" standardDeviationMicrosecondsPerInvocation="904"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindPuzzlers" totalMilliseconds="13" invocations="31" avgMicrosecondsPerInvocation="445" maxMicrosecondsPerInvocation="4716" standardDeviationMicrosecondsPerInvocation="903"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref$CheckCallSitesAndReturnInstructions" totalMilliseconds="13" invocations="237" avgMicrosecondsPerInvocation="56" maxMicrosecondsPerInvocation="2078" standardDeviationMicrosecondsPerInvocation="157"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="13" invocations="31" avgMicrosecondsPerInvocation="434" maxMicrosecondsPerInvocation="7763" standardDeviationMicrosecondsPerInvocation="1426"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ReflectiveClasses" totalMilliseconds="13" invocations="158" avgMicrosecondsPerInvocation="83" maxMicrosecondsPerInvocation="2456" standardDeviationMicrosecondsPerInvocation="219"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1645621025034" release="" codeSize="0" numClasses="0"/>
+    <AppVersion sequence="1" timestamp="1645621025043" release="" codeSize="4269" numClasses="31"/>
+  </History>
+</BugCollection>
