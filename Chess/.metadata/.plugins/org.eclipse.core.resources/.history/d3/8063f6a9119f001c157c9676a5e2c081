@@ -28,7 +28,7 @@ public class RunningGUI extends Application {
 
 		Parent root = loader.load();
 		Controller controller = loader.getController();
-		Scene scene = new Scene(root, 850, 700);
+		Scene scene = new Scene(root, 825, 700);
 
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
 

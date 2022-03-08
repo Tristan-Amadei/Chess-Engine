@@ -183,6 +183,11 @@ public class Engine {
 				}
 			}
 			Move.sortMoves(allMoves, board);
+			/*
+			System.out.println("Depth: " + i);
+			for(Move move : allMoves) {
+				move.display();
+			}*/
 		}
 		
 		bestMove.playMove(board);

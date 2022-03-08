@@ -36,13 +36,11 @@ public class Controller {
 		switch (code) {
 		case ENTER:
 			TextEngine1.setVisible(true);
-			TextEngine2.setVisible(true);
 			System.out.println("Engine summoned");
 			//Engine.playBestMove_alphaBeta(RunningGUI.gameBoard, 3, RunningGUI.gameBoard.colorToPlay);
 			Engine.playBestMove_iterativeDeepening(RunningGUI.gameBoard, 6, RunningGUI.gameBoard.colorToPlay);
 			this.movePieceFromLastMove();
 			TextEngine1.setVisible(false);
-			TextEngine2.setVisible(false);
 			break;
 		case LEFT:
 			System.out.println("Random Moves");

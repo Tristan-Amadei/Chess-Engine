@@ -22,32 +22,32 @@ public class Engine {
 			return Evaluation.overallEvaluation(board);
 		}
 		
-		//Implementation of transposition Tables not working for the moment; working on it
-		 long zKey_position = board.zKey.getZobristHash(board);
+		/* Implementation of transposition Tables not working for the moment; working on it
+		 * long zKey_position = board.zKey.getZobristHash(board);
 		if (board.table.moveTable.containsKey(zKey_position)) {
 			TranspositionTableProbing probe = board.table.probeHash(board, depth, alpha, beta);
 			if (probe.result == ProbingResult.OK) {
 				return probe.score;
 			}
-		}
+		} */
 
 		List<Move> allMoves = board.allLegalMoves();
 		Move.sortMoves(allMoves, board);
 		for (Move move : allMoves) {
 			nb_positions_reached++;
 			move.playMove(board);
-			zKey_position = board.zKey.getZobristHash(board);
+			//zKey_position = board.zKey.getZobristHash(board);
 			double score = this.alphaBetaMin(board, alpha, beta, depth - 1);
 			board.unmakeMove();
 			if (score >= beta) {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
 				return beta;
 			}
 			if (score > alpha) {
 				alpha = score;
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
 			} else {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
 			}
 		}
 		return alpha;
@@ -58,32 +58,32 @@ public class Engine {
 			return Evaluation.overallEvaluation(board);
 		}
 		
-		//Implementation of transposition Tables not working for the moment; working on it
+		/* Implementation of transposition Tables not working for the moment; working on it
 		long zKey_position = board.zKey.getZobristHash(board);
 		if (board.table.moveTable.containsKey(zKey_position)) {
 			TranspositionTableProbing probe = board.table.probeHash(board, depth, alpha, beta);
 			if (probe.result == ProbingResult.OK) {
 				return probe.score;
 			}
-		} 
+		} */
 
 		List<Move> allMoves = board.allLegalMoves();
 		Move.sortMoves(allMoves, board);
 		for (Move move : allMoves) {
 			nb_positions_reached++;
 			move.playMove(board);
-			zKey_position = board.zKey.getZobristHash(board);
+			//zKey_position = board.zKey.getZobristHash(board);
 			double score = this.alphaBetaMax(board, alpha, beta, depth - 1);
 			board.unmakeMove();
 			if (score <= alpha) {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
 				return alpha;
 			}
 			if (score < beta) {
 				beta = score;
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
 			} else {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
 			}
 		}
 		return beta;
@@ -183,6 +183,11 @@ public class Engine {
 				}
 			}
 			Move.sortMoves(allMoves, board);
+			/*
+			System.out.println("Depth: " + i);
+			for(Move move : allMoves) {
+				move.display();
+			}*/
 		}
 		
 		bestMove.playMove(board);
