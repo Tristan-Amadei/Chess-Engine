@@ -1,6 +1,0 @@
-package game.opponent;
-
-public class TranspositionTable {
-
-	
-}

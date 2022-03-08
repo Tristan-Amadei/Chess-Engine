@@ -17,72 +17,38 @@ public class Engine {
 		this.nb_positions_reached = 0;
 	}
 
-	public double alpha_beta_negamax(Board board, double alpha, double beta, int depth) {
-		if (depth <= 0) {
-			return Evaluation.overallEvaluation(board);
-		}
-
-		List<Move> allMoves = board.allLegalMoves();
-		Move.sortMoves(allMoves, board);
-		for (Move move : allMoves) {
-			move.playMove(board);
-			nb_positions_reached++;
-			double score = (-1) * alpha_beta_negamax(board, (-1) * beta, (-1) * alpha, depth - 1);
-			board.unmakeMove();
-			if (score >= alpha) {
-				alpha = score;
-				bestMove = move;
-				if (alpha >= beta) {
-					return beta;
-				}
-			}
-		}
-		return alpha;
-	}
-
-	public static void playBestMove_negamax(Board board, int depth) {
-		long t0 = System.currentTimeMillis();
-
-		Engine engine = new Engine();
-		engine.alpha_beta_negamax(board, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, depth);
-		engine.bestMove.playMove(board);
-
-		long t1 = System.currentTimeMillis();
-		System.out.println("Total time to find move at a depth of " + depth + ": " + (t1 - t0) / 1000
-				+ " s. Went through " + engine.nb_positions_reached + " positions.");
-	}
-
 	public double alphaBetaMax(Board board, double alpha, double beta, int depth) {
 		if (depth <= 0) {
 			return Evaluation.overallEvaluation(board);
-			//return searchAllCaptures(board, alpha, beta);
 		}
-		long zKey_position = board.zKey.getZobristHash(board);
+		
+		/* Implementation of transposition Tables not working for the moment; working on it
+		 * long zKey_position = board.zKey.getZobristHash(board);
 		if (board.table.moveTable.containsKey(zKey_position)) {
 			TranspositionTableProbing probe = board.table.probeHash(board, depth, alpha, beta);
 			if (probe.result == ProbingResult.OK) {
 				return probe.score;
 			}
-		}
+		} */
 
 		List<Move> allMoves = board.allLegalMoves();
 		Move.sortMoves(allMoves, board);
 		for (Move move : allMoves) {
 			nb_positions_reached++;
 			move.playMove(board);
-			zKey_position = board.zKey.getZobristHash(board);
+			//zKey_position = board.zKey.getZobristHash(board);
 			double score = this.alphaBetaMin(board, alpha, beta, depth - 1);
+			board.unmakeMove();
 			if (score >= beta) {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
 				return beta;
 			}
 			if (score > alpha) {
 				alpha = score;
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
 			} else {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
 			}
-			board.unmakeMove();
 		}
 		return alpha;
 	}
@@ -90,35 +56,35 @@ public class Engine {
 	public double alphaBetaMin(Board board, double alpha, double beta, int depth) {
 		if (depth <= 0) {
 			return Evaluation.overallEvaluation(board);
-			//return searchAllCaptures(board, alpha, beta);
 		}
 		
+		/* Implementation of transposition Tables not working for the moment; working on it
 		long zKey_position = board.zKey.getZobristHash(board);
 		if (board.table.moveTable.containsKey(zKey_position)) {
 			TranspositionTableProbing probe = board.table.probeHash(board, depth, alpha, beta);
 			if (probe.result == ProbingResult.OK) {
 				return probe.score;
 			}
-		}
+		} */
 
 		List<Move> allMoves = board.allLegalMoves();
 		Move.sortMoves(allMoves, board);
 		for (Move move : allMoves) {
 			nb_positions_reached++;
 			move.playMove(board);
-			zKey_position = board.zKey.getZobristHash(board);
+			//zKey_position = board.zKey.getZobristHash(board);
 			double score = this.alphaBetaMax(board, alpha, beta, depth - 1);
+			board.unmakeMove();
 			if (score <= alpha) {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFALPHA);
 				return alpha;
 			}
 			if (score < beta) {
 				beta = score;
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFEXACT);
 			} else {
-				board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
+				//board.table.addToTable(zKey_position, move, score, alpha, beta, depth, FLAG.HFBETA);
 			}
-			board.unmakeMove();
 		}
 		return beta;
 	}

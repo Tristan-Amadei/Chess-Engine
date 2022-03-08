@@ -48,65 +48,13 @@ public class TranspositionTable {
 		flagTable = new Hashtable<>();
 	}
 	
-	/*
 	public TranspositionTableProbing probeHash(Board board, int depth, double alpha, double beta) {
 		TranspositionTableProbing returning = new TranspositionTableProbing();
 		
 		long zKey_position = board.zKey.getZobristHash(board);
 		if (moveTable.containsKey(zKey_position)) { //then all other tables do possess this key too
 			
-			//Move move = moveTable.get(zKey_position);
 			double eval = evalTable.get(zKey_position);
-			double alpha_table = alphaTable.get(zKey_position);
-			double beta_table = betaTable.get(zKey_position);
-			int depth_table = depthTable.get(zKey_position);
-			FLAG flag = flagTable.get(zKey_position);
-			
-			if (depth_table >= depth) {
-				returning.result = ProbingResult.OK;
-				switch(flag) {
-				case HFEXACT:
-					returning.score = eval;
-					return returning;
-				case HFALPHA:
-					if (Math.abs(eval) <= Math.abs(alpha)) {
-						returning.score = alpha;
-						return returning;
-					}
-					returning.score = alpha_table;
-					return returning;
-				case HFBETA:
-					if (Math.abs(eval) >= Math.abs(beta)) {
-						returning.score = beta;
-						return returning;
-					}
-					//returning.score = eval;
-					returning.score = beta_table;
-					return returning;
-				default:
-					returning.score = eval;
-					return returning;
-				}
-			} else {
-				returning.result = ProbingResult.NotOK;
-				return returning;
-			}
-		} else {
-			returning.result = ProbingResult.NotOK;
-			return returning;
-		}
-	} */
-	
-	public TranspositionTableProbing probeHash(Board board, int depth, double alpha, double beta) {
-		TranspositionTableProbing returning = new TranspositionTableProbing();
-		
-		long zKey_position = board.zKey.getZobristHash(board);
-		if (moveTable.containsKey(zKey_position)) { //then all other tables do possess this key too
-			
-			//Move move = moveTable.get(zKey_position);
-			double eval = evalTable.get(zKey_position);
-			double alpha_table = alphaTable.get(zKey_position);
-			double beta_table = betaTable.get(zKey_position);
 			int depth_table = depthTable.get(zKey_position);
 			FLAG flag = flagTable.get(zKey_position);
 			

@@ -112,12 +112,12 @@ public class Board {
 
 			boolean moveValid = false;
 			while (!moveValid) {
-				System.out.println("What piece to move ?");
+				System.out.println("What piece to move? Type 'Engine' should you want the engine to play on this move");
 				String coor_piece = sc.next();
 				if (coor_piece.equals("engine") || coor_piece.equals("Engine")) {
 					System.out.println("To what depth?");
 					depth = sc.nextInt();
-					while (depth < 1 || depth > 10) {
+					while (depth < 1) {
 						System.out.println("To what depth?");
 						depth = sc.nextInt();
 					}
@@ -146,8 +146,8 @@ public class Board {
 				}
 
 				this.display();
-				System.out.println("Position Evaluation: " + Evaluation.overallEvaluation(this) / 100);
-				System.out.println("Wish to keep playing ? Enter yes if so");
+				System.out.println("Position Evaluation: " + Evaluation.overallEvaluation(this) / 100 + "\n");
+				System.out.println("Wish to keep playing? Enter yes if so");
 				keepGoing = sc.next();
 			}
 		}

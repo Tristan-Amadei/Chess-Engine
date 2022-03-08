@@ -1,9 +1,0 @@
-package game.opponent;
-
-import java.util.*;
-
-public class TranspositionTable {
-	
-	public static HashTable<Long, Move> moveTable = new HashTable<>();
-
-}

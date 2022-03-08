@@ -1,7 +1,0 @@
-module opti_chess {
-	requires javafx.controls;
-	requires javafx.graphics;
-	requires javafx.fxml;
-	
-	opens gui to javafx.graphics, javafx.fxml;
-}
