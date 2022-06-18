@@ -1,5 +1,6 @@
 package game.opponent;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import game.*;

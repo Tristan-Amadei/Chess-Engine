@@ -8,6 +8,7 @@ import java.util.Random;
 import game.MoveTypeClass.MoveType;
 import game.opponent.Engine;
 import game.opponent.Evaluation;
+import game.opponent.PawnEvaluation;
 import game.pieces.PieceTypeClass.PieceType;
 import game.*;
 import javafx.fxml.FXML;
@@ -19,17 +20,30 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.TextFlow;
 
 public class Controller {
+	
+	@FXML
+	private javafx.scene.text.Text TextEngine1;
+	
+	@FXML
+	private javafx.scene.text.Text TextEngine2;
+
 	
 	@FXML
 	public void opponentPlay(KeyEvent e) {
 		KeyCode code = e.getCode();
 		switch (code) {
 		case ENTER:
+			TextEngine1.setVisible(true);
+			TextEngine2.setVisible(true);
 			System.out.println("Engine summoned");
 			Engine.playBestMove_alphaBeta(RunningGUI.gameBoard, 3, RunningGUI.gameBoard.colorToPlay);
+			//Engine.playBestMove_iterativeDeepening(RunningGUI.gameBoard, 6, RunningGUI.gameBoard.colorToPlay);
 			this.movePieceFromLastMove();
+			TextEngine1.setVisible(false);
+			TextEngine2.setVisible(false);
 			break;
 		case LEFT:
 			System.out.println("Random Moves");
@@ -57,9 +71,9 @@ public class Controller {
 	}
 
 	@FXML
-	private TextArea ColorToPlay;
+	private javafx.scene.text.Text ColorToPlay;
 	@FXML
-	private TextArea boardEvaluation;
+	private javafx.scene.text.Text boardEvaluation;
 
 	public void setColorToPlay() {
 		String color;
@@ -74,9 +88,16 @@ public class Controller {
 	public void setEvaluation() {
 		double eval = Evaluation.overallEvaluation(RunningGUI.gameBoard);
 		String str_eval = "" + eval;
+		List<int[]> count = PawnEvaluation.countPawns(RunningGUI.gameBoard);
+		int doubled_w = PawnEvaluation.numberOfDoubledPawns(count, true);
+		int doubled_b = PawnEvaluation.numberOfDoubledPawns(count, false);
+		int iso_w = PawnEvaluation.numberOfIsolatedPawns(count, true);
+		int iso_b = PawnEvaluation.numberOfIsolatedPawns(count, false);
+		
+		str_eval = "" + doubled_w + ", " + doubled_b + "//" + iso_w + ", " + iso_b;
 		boardEvaluation.setText(str_eval);
 	}
-
+	
 	@FXML
 	private ImageView WRook1;
 	private double xwRook1;

@@ -8,6 +8,7 @@ import java.util.Random;
 import game.MoveTypeClass.MoveType;
 import game.opponent.Engine;
 import game.opponent.Evaluation;
+import game.opponent.PawnEvaluation;
 import game.pieces.PieceTypeClass.PieceType;
 import game.*;
 import javafx.fxml.FXML;
@@ -38,8 +39,8 @@ public class Controller {
 			TextEngine1.setVisible(true);
 			TextEngine2.setVisible(true);
 			System.out.println("Engine summoned");
-			//Engine.playBestMove_alphaBeta(RunningGUI.gameBoard, 3, RunningGUI.gameBoard.colorToPlay);
-			Engine.playBestMove_iterativeDeepening(RunningGUI.gameBoard, 6, RunningGUI.gameBoard.colorToPlay);
+			Engine.playBestMove_alphaBeta(RunningGUI.gameBoard, 3, RunningGUI.gameBoard.colorToPlay);
+			//Engine.playBestMove_iterativeDeepening(RunningGUI.gameBoard, 6, RunningGUI.gameBoard.colorToPlay);
 			this.movePieceFromLastMove();
 			TextEngine1.setVisible(false);
 			TextEngine2.setVisible(false);

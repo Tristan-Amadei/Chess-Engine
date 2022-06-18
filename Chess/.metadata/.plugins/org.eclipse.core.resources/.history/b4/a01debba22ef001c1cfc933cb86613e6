@@ -1,0 +1,41 @@
+package game.opponent;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import game.Board;
+import game.pieces.PieceTypeClass.PieceType;
+
+public class PawnEvaluation {
+	
+	public static List<int[]> countPawns(Board board) {
+		List<int[]> numberOfPawns = new ArrayList<>();
+		int[] whitePawns = new int[8];
+		int[] blackPawns = new int[8];
+		for (int j = 0; j < 8; j++) {
+			for (int i = 0; i < 8; i++) {
+				if (board.board[i][j] != null && board.board[i][j].getType() == PieceType.Pawn) {
+					if (board.board[i][j].getColor()) {
+						whitePawns[j]++;
+					} else {
+						blackPawns[j]++;
+					}
+				}
+			}
+		}
+		numberOfPawns.add(whitePawns);
+		numberOfPawns.add(blackPawns);
+		return numberOfPawns;
+	}
+	
+	public static int numberOfIsolatedPawns(Board board, List<int[]> pawnsCount, boolean color) {
+		int[] pawnStructure;
+		if (color) {
+			pawnStructure = pawnsCount.get(0);
+		} else {
+			pawnStructure = pawnsCount.get(1);
+		}
+		
+		
+	}
+}

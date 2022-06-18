@@ -1665,7 +1665,7 @@ public class Evaluation {
 		GameState stateOfTheGame = gameState(board);
 		switch (stateOfTheGame) {
 		case Playing:
-			return rawBoardEvaluation(board) + heuristicEvaluation(board) + mobility(board) + PawnEvaluation.scoreOfPawnStructure(board);
+			return rawBoardEvaluation(board) + heuristicEvaluation(board) + mobility(board);
 		case Stalemate:
 			return 0;
 		case Checkmate:

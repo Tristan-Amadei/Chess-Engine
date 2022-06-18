@@ -19,21 +19,30 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.TextFlow;
 
 public class Controller {
+	
+	@FXML
+	private javafx.scene.text.Text TextEngine1;
+	
+	@FXML
+	private javafx.scene.text.Text TextEngine2;
+
 	
 	@FXML
 	public void opponentPlay(KeyEvent e) {
 		KeyCode code = e.getCode();
 		switch (code) {
 		case ENTER:
+			TextEngine1.setVisible(true);
+			TextEngine2.setVisible(true);
 			System.out.println("Engine summoned");
-			if (RunningGUI.gameBoard.colorToPlay) {
-				Engine.playBestMove_iterativeDeepening(RunningGUI.gameBoard, 6, RunningGUI.gameBoard.colorToPlay);
-			} else {
-				Engine.playBestMove_iterativeDeepening(RunningGUI.gameBoard, 7, RunningGUI.gameBoard.colorToPlay);
-			}
+			Engine.playBestMove_alphaBeta(RunningGUI.gameBoard, 3, RunningGUI.gameBoard.colorToPlay);
+			//Engine.playBestMove_iterativeDeepening(RunningGUI.gameBoard, 6, RunningGUI.gameBoard.colorToPlay);
 			this.movePieceFromLastMove();
+			TextEngine1.setVisible(false);
+			TextEngine2.setVisible(false);
 			break;
 		case LEFT:
 			System.out.println("Random Moves");
@@ -61,9 +70,9 @@ public class Controller {
 	}
 
 	@FXML
-	private TextArea ColorToPlay;
+	private javafx.scene.text.Text ColorToPlay;
 	@FXML
-	private TextArea boardEvaluation;
+	private javafx.scene.text.Text boardEvaluation;
 
 	public void setColorToPlay() {
 		String color;
@@ -80,7 +89,7 @@ public class Controller {
 		String str_eval = "" + eval;
 		boardEvaluation.setText(str_eval);
 	}
-
+	
 	@FXML
 	private ImageView WRook1;
 	private double xwRook1;
