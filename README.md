@@ -5,7 +5,7 @@ The engine can either play with the white pieces or the black ones.
 The GUI (Graphical User Interface) was built with JavaFX and SceneBuilder. You'll need them to run the GUI of the project, but should you not have them, you may still play against the engine directly in the console. 
 
 To make it work : 
-2. Launch the program present in chess/src/gui/RunningGUI. A window will open and show a chess board. 
+1. Launch the program present in chess/src/gui/RunningGUI. A window will open and show a chess board. \n
 3. On this board, you can play either side. Clicking on any piece displays dots on the squares on which said piece can go on the next move. 
 4. To summon the engine and make it play, press the Enter key. It will play a move for the color which is to play. 
 5. To take back one move, press the left arrow key on your keyboard. 
